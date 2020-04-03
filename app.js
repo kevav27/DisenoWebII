@@ -17,9 +17,6 @@ app.get('/', (req, res) => {
   res.send('We are on home');
 })
 
-
-
-
 //Starting the server and connection with mongo DB
 app.listen(5000, () => {
   MongoClient.connect(CONNECTION_URL, { useNewUrlParser: true }, (error, client) => {
@@ -40,8 +37,4 @@ app.post("/usuarios", (request, response) => {
       response.send(result.result);
   });
 });
-
-MongoClient.connect(CONNECTION_URL, function(){
-  
-})
 
