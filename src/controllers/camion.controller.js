@@ -15,7 +15,7 @@ camionCtrl.crearNuevoCamion = async (req, res) => {
   });
   await nuevoCamion.save()
     .then(nuevoCamion => {
-      res.send(nuevoCamion);
+      res.json(nuevoCamion);
     }).catch(err => {
       res.status(500).send({
         message: err.message || "Error al crear nuevo camión"
@@ -26,7 +26,7 @@ camionCtrl.crearNuevoCamion = async (req, res) => {
 camionCtrl.listarCamiones = async (req, res) => {
   await Camion.find()
     .then(camiones => {
-      res.send(camiones);
+      res.json(camiones);
     }).catch(err => {
       res.status(500).send({
         message: err.message || "Error al recuperar los camiones de la base de datos"
@@ -36,7 +36,7 @@ camionCtrl.listarCamiones = async (req, res) => {
 
 
 camionCtrl.obtenerCamion = async (req, res) => {
-  await Camion.findOne({"codigo_camion":req.body.codigo_camion})
+ await Camion.find({codigo_camion:req.params.codigo_camion})
     .then(camion => {
       if (!camion) {
         return res.status(404).send({
@@ -57,7 +57,7 @@ camionCtrl.obtenerCamion = async (req, res) => {
 }
 
 camionCtrl.actualizarCamion = async (req, res) => {
-  await Camion.findOneAndUpdate({"codigo_camion":req.body.codigo_camion},
+  await Camion.updateOne({codigo_camion:req.params.codigo_camion},
   {
     nombreCorto: req.body.nombreCorto,
     descripcion: req.body.descripcion,
@@ -87,7 +87,7 @@ camionCtrl.actualizarCamion = async (req, res) => {
 };
 
 camionCtrl.eliminarCamion = async (req, res) => {
-  await Camion.findOneAndDelete({"codigo_camion":req.body.codigo_camion})
+  await Camion.deleteOne({codigo_camion:req.params.codigo_camion})
     .then(camion => {
       if (!camion) {
         return res.status(404).send({

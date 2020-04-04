@@ -12,7 +12,7 @@ app.set('port', process.env.PORT || 5000);
 // middlewares
 app.use(express.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 // Global Variables
 

@@ -3,17 +3,14 @@ const router = express.Router();
 
 // Controller
 const {
-   // renderCamionForm,
     crearNuevoCamion,
     listarCamiones,
     obtenerCamion,
-    //renderEditarForm,
     actualizarCamion,
     eliminarCamion
 } = require("../controllers/camion.controller");
 
 // Crear nuevo camión
-/*router.get("/camion/agregar", renderCamionForm);*/
 
 router.post("/camion/nuevo-camion", crearNuevoCamion);
 
@@ -25,7 +22,6 @@ router.get("/camion", listarCamiones);
 router.get("/camion/obtener-camion/:codigo_camion", obtenerCamion);
 
 // Edit Notes
-/*router.get("/camion/editar/:codigo_camion", renderEditarForm);*/
 
 router.put("/camion/editar-camion/:codigo_camion", actualizarCamion);
 
