@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="author" content="Hau Nguyen">
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Punto de Venta</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="index.html">
+                            <h2 class="title-1">TRAMSA</h2>
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Párametros
+                            </a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+
+                                <li>
+                                    <a href="tiqueteCaja.html">Párametros Generales</a>
+                                </li>
+                                <li>
+                                    <a href="consecutivos.html">Consecutivos</a>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-gears"></i>Administrador
+                            </a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="bodegas.html">Bodegas</a>
+                                </li>
+                                <li>
+                                    <a href="caminones.html">Camiones</a>
+                                </li>
+                                <li>
+                                    <a href="tiposMateriaPrima.html">Tipos de Materia Prima</a>
+                                </li>
+                                <li>
+                                    <a href="materia-prima.html">Materia Prima</a>
+                                </li>
+                                <li>
+                                    <a href="productos.html">Productos</a>
+                                </li>
+                                <li>
+                                    <a href="proveedores.html">Proveedores</a>
+                                </li>
+                                <li>
+                                    <a href="clientes.html">Clientes</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="active has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-refresh"></i>Procesos</a>
+                            </a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="crearOrden.html">Crear Orden</a>
+                                </li>
+                                <li>
+                                    <a href="confirmarOrden.html">Comprobar Orden</a>
+                                </li>
+                                <li>
+                                    <a href="inventario.html">Entrada de Inventario</a>
+                                </li>
+                                <li>
+                                    <a href="produccionLote.html">Producción en Lote</a>
+                                </li>
+                                <li class="active">
+                                    <a href="puntoVenta.html">Punto de Venta</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-shopping-cart"></i>Cajas
+                            </a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="caja.html">Apertura y Cierre de Caja</a>
+                                </li>
+                                <li>
+                                    <a href="dinero.html">Pases de Dinero</a>
+                                </li>
+                                <li>
+                                    <a href="facturas.html">Generación de Facturas</a>
+                                </li>
+                                <li>
+                                    <a href="arqueo.html">Arqueo de Caja</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="#">
+                    <h2 class="title-1">TRAMSA</h2>
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li class=" has-sub">
+                            <a class=" js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Párametros
+                            </a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+
+                                <li>
+                                    <a href="tiqueteCaja.html">Párametros Generales</a>
+                                </li>
+                                <li>
+                                    <a href="consecutivos.html">Consecutivos</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-gears"></i>Administrador
+                            </a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="bodegas.html">Bodegas</a>
+                                </li>
+                                <li>
+                                    <a href="caminones.html">Camiones</a>
+                                </li>
+                                <li>
+                                    <a href="tiposMateriaPrima.html">Tipos de Materia Prima</a>
+                                </li>
+                                <li>
+                                    <a href="materia-prima.html">Materia Prima</a>
+                                </li>
+                                <li>
+                                    <a href="productos.html">Productos</a>
+                                </li>
+                                <li>
+                                    <a href="proveedores.html">Proveedores</a>
+                                </li>
+                                <li>
+                                    <a href="clientes.html">Clientes</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="active has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-refresh"></i>Procesos
+                            </a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="crearOrden.html">Crear Orden</a>
+                                </li>
+                                <li>
+                                    <a href="confirmarOrden.html">Comprobar Orden</a>
+                                </li>
+                                <li>
+                                    <a href="inventario.html">Entrada de Inventario</a>
+                                </li>
+                                <li>
+                                    <a href="produccionLote.html">Producción en Lote</a>
+                                </li>
+                                <li class="active">
+                                    <a href="puntoVenta.html">Punto de Venta</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class=" has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-shopping-cart"></i>Cajas
+                            </a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="caja.html">Apertura y Cierre de Caja</a>
+                                </li>
+                                <li>
+                                    <a href="dinero.html">Pases de Dinero</a>
+                                </li>
+                                <li>
+                                    <a href="facturas.html">Generación de Facturas</a>
+                                </li>
+                                <li>
+                                    <a href="arqueo.html">Arqueo de Caja</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="header-wrap">
+                            <form class="form-header"> </form>
+                            <div class="header-button">
+                                <div class="noti-wrap">
+                                    <div class="noti__item js-item-menu">
+                                        <i class="zmdi zmdi-notifications"></i>
+                                        <span class="quantity">3</span>
+                                        <div class="notifi-dropdown js-dropdown">
+                                            <div class="notifi__title">
+                                                <p>You have 3 Notifications</p>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c1 img-cir img-40">
+                                                    <i class="zmdi zmdi-email-open"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>You got a email notification</p>
+                                                    <span class="date">April 12, 2018 06:50</span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c2 img-cir img-40">
+                                                    <i class="zmdi zmdi-account-box"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>Your account has been blocked</p>
+                                                    <span class="date">April 12, 2018 06:50</span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__item">
+                                                <div class="bg-c3 img-cir img-40">
+                                                    <i class="zmdi zmdi-file-text"></i>
+                                                </div>
+                                                <div class="content">
+                                                    <p>You got a new file</p>
+                                                    <span class="date">April 12, 2018 06:50</span>
+                                                </div>
+                                            </div>
+                                            <div class="notifi__footer">
+                                                <a href="#">All notifications</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="account-wrap">
+                                    <div class="account-item clearfix js-item-menu">
+                                        <div class="image">
+                                            <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                        </div>
+                                        <div class="content">
+                                            <a class="js-acc-btn" href="#">USUARIO</a>
+                                        </div>
+                                        <div class="account-dropdown js-dropdown">
+                                            <div class="info clearfix">
+                                                <div class="image">
+                                                    <a href="#">
+                                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                                    </a>
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="name">
+                                                        <a href="#">USUARIO</a>
+                                                    </h5>
+                                                    <span class="email">johndoe@example.com</span>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__body">
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-account"></i>Cuenta</a>
+                                                </div>
+                                                <div class="account-dropdown__item">
+                                                    <a href="#">
+                                                        <i class="zmdi zmdi-settings"></i>Ajustes</a>
+                                                </div>
+                                            </div>
+                                            <div class="account-dropdown__footer">
+                                                <a href="#">
+                                                    <i class="zmdi zmdi-power"></i>Salir</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="overview-wrap">
+                                    <h2 class="title-1">Punto de Venta</h2>
+                                    <button class="au-btn au-btn-icon au-btn--blue">
+                                        <i class="fas fa-download"></i>Descargar
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row m-t-25"></div>
+                        <div class="row">
+                            <div class="col-lg-20" style="width: 780px;">
+                                <div class="au-card recent-report">
+                                    <div class="au-card-inner">
+                                        <h3 class="title-2">Registro</h3>
+                                        <div class="signup-form">
+                                            <form class="register-form" id="register-form">
+                                                <div class="form-row">
+                                                    <div class="form-group">
+                                                        <div class="form-input">
+                                                            <label for="produccion_Number" class="required">Número de
+                                                                Producción</label>
+                                                            <input type="text" name="produccion_Number"
+                                                                id="produccion_Number" />
+                                                        </div>
+                                                        <div class="form-input">
+                                                            <label for="produccion_Date" class="required">Fecha de la
+                                                                Producción</label>
+                                                            <input type="date" name="produccion_Date"
+                                                                id="produccion_Date" />
+                                                        </div>
+                                                        <div class="form-input">
+                                                            <label for="produccion_Code" class="required">Código de
+                                                                Producto</label>
+                                                            <input type="text" name="produccion_Code"
+                                                                id="produccion_Code" />
+                                                        </div>
+                                                        <div class="form-input">
+                                                            <label for="producto_Name" class="required">Nombre de
+                                                                Producto</label>
+                                                            <input type="text" name="producto_Name"
+                                                                id="producto_Name" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+
+                                                        <div class="select-list">
+                                                            <label for="pedido_Proveedor" class="required">Bodega a
+                                                                Almacenar</label>
+                                                            <select name="pedido_Proveedor" id="pedido_Proveedor"
+                                                                class="form-control">
+                                                                <option value="0">Seleccione una Opción</option>
+                                                                <option value="1"></option>
+                                                                <option value="2"></option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-input">
+                                                            <label for="produccion_Number" class="required">Cantidad por
+                                                                Producir</label>
+                                                            <input type="number" name="produccion_Number"
+                                                                id="produccion_Number" />
+                                                        </div>
+                                                        <div class="form-input">
+                                                            <label for="produccion_Tiempo" class="required">Tiempo
+                                                                Estimado de Producción</label>
+                                                            <input step="1" type="time" name="produccion_Tiempo"
+                                                                id="produccion_Tiempo" />
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                        </div>
+
+                                        <div class="form-submit">
+                                            <input type="submit" value="Producir" class="submit" id="submit"
+                                                name="submit" />
+                                            <input type="submit" value="Cancelar" class="submit" id="reset"
+                                                name="reset" />
+                                        </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- DATA TABLE -->
+                                <h3 class="title-5 m-b-35">Listado de Clientes</h3>
+                                <div class="table-data__tool">
+                                    <div class="table-data__tool-left">
+                                        <div class="rs-select2--light rs-select2--md">
+                                            <select class="js-select2" name="property">
+                                                <option selected="selected">Propiedades</option>
+                                                <option value="">Código</option>
+                                                <option value="">Nombre Corto</option>
+                                            </select>
+                                            <div class="dropDownSelect2"></div>
+                                        </div>
+
+                                        <button class="au-btn-filter">
+                                            <i class="zmdi zmdi-filter-list"></i>Filtrar</button>
+                                    </div>
+                                    <div class="table-data__tool-right">
+
+                                        <div class="rs-select2--light">
+                                            <form class="form-header" action="" method="">
+                                                <input class="au-input " type="text" name="search"
+                                                    placeholder="Buscar" />
+                                                <button class="au-btn--submit" type="submit">
+                                                    <i class="zmdi zmdi-search"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                                            <i class="zmdi zmdi-plus"></i>Confirmar Orden</button>
+                                    </div>
+                                </div>
+                                <div class="table-responsive table-responsive-data3">
+                                    <table class="table table-data2">
+                                        <thead>
+                                            <tr>
+                                                <th>Número de Factura</th>
+                                                <th>Código Materia Prima</th>
+                                                <th>Descripción</th>
+                                                <th>Cantidad</th>
+                                                <th>Estado</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="tr-shadow">
+
+                                                <td>OP1903</td>
+                                                <td>MP49358</td>
+                                                <td class="desc">Agua Florida</td>
+                                                <td>100</td>
+                                                <td>
+                                                    <span class="status--pending">Pendiente</span>
+                                                </td>
+                                                <td>
+                                                    <label class="au-checkbox">
+                                                        <input type="checkbox">
+                                                        <span class="au-checkmark"></span>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            <tr class="spacer"></tr>
+
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- END DATA TABLE -->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>Proyecto Diseño Web II.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END MAIN CONTENT-->
+                    <!-- END PAGE CONTAINER-->
+                </div>
+
+            </div>
+
+            <!-- Jquery JS-->
+            <script src="vendor/jquery-3.2.1.min.js"></script>
+            <!-- Bootstrap JS-->
+            <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+            <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+            <!-- Vendor JS       -->
+            <script src="vendor/slick/slick.min.js">
+            </script>
+            <script src="vendor/wow/wow.min.js"></script>
+            <script src="vendor/animsition/animsition.min.js"></script>
+            <script src="vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+            </script>
+            <script src="vendor/counter-up/jquery.waypoints.min.js"></script>
+            <script src="vendor/counter-up/jquery.counterup.min.js">
+            </script>
+            <script src="vendor/circle-progress/circle-progress.min.js"></script>
+            <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+            <script src="vendor/chartjs/Chart.bundle.min.js"></script>
+            <script src="vendor/select2/select2.min.js">
+            </script>
+
+            <!-- Main JS-->
+            <script src="js/main.js"></script>
+
+</body>
+
+</html>
+<!-- end document-->
