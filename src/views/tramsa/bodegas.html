@@ -63,7 +63,7 @@
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
 
                                 <li>
-                                    <a href="tiqueteCaja.html">Párametros Generales</a>
+                                    <a href="parametros.html">Párametros Generales</a>
                                 </li>
                                 <li>
                                     <a href="consecutivos.html">Consecutivos</a>
@@ -164,7 +164,7 @@
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
 
                                 <li>
-                                    <a href="tiqueteCaja.html">Párametros Generales</a>
+                                    <a href="parametros.html">Párametros Generales</a>
                                 </li>
                                 <li>
                                     <a href="consecutivos.html">Consecutivos</a>
@@ -379,7 +379,7 @@
                                                         <div class="form-input">
                                                             <label for="bodegaShortName" class="required">Nombre
                                                                 Corto</label>
-                                                            <input type="text" name="bodegaName" id="bodegaName" />
+                                                            <input type="text" name="bodegaShortName" id="bodegaShortName" />
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
@@ -425,7 +425,6 @@
                                                     </div>
                                                 </div>
                                         </div>
-
                                         <div class="form-submit">
                                             <input type="submit" value="Submit" class="submit" id="submit"
                                                 name="submit" />
@@ -436,6 +435,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="row">
                             <div class="col-md-12">
                                 <!-- DATA TABLE -->
@@ -464,11 +464,8 @@
                                                 </button>
                                             </form>
                                         </div>
-                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                                            <i class="zmdi zmdi-plus"></i>Agregar</button>
-                                        
-                                        
-                                        
+                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small add-new">
+                                            <i class="zmdi zmdi-plus"></i>Agregar</button>              
                                     </div>
                                 </div>
                                 <div class="table-responsive table-responsive-data3">
@@ -502,20 +499,57 @@
                                                 <td>1000</td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top"
-                                                            title="Send">
+                                                        <button class="item add" data-toggle="tooltip" data-placement="top"
+                                                            title="Agregar">
                                                             <i class="zmdi zmdi-plus"></i>
                                                         </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top"
-                                                            title="Edit">
+                                                        <button class="item edit" data-toggle="tooltip" data-placement="top"
+                                                            title="Editar">
                                                             <i class="zmdi zmdi-edit"></i>
                                                         </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top"
-                                                            title="Delete">
+                                                        <button class="item delete" data-toggle="tooltip" data-placement="top">
                                                             <i class="zmdi zmdi-delete"></i>
                                                         </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top"
-                                                            title="More">
+                                                        <button class="item " data-toggle="tooltip" data-placement="top">
+                                                            <i class="zmdi zmdi-more"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="spacer"></tr>
+                                            <tr class="tr-shadow">
+                                                
+                                                <td>BO</td>
+                                                <td>Bodega Quimícos</td>
+                                                <td class="desc">BodQu</td>
+                                                <td>
+                                                    <span class="status--process">Processed</span>
+                                                </td>
+                                                <td>San José</td>
+                                                <td><div class="rs-select2--trans rs-select2--sm">
+                                                    <select class="js-select2" name="property">
+                                                        <option selected="selected">Metros</option>
+                                                        <option value="">Post</option>
+                                                        <option value="">Watch</option>
+                                                    </select>
+                                                    <div class="dropDownSelect2"></div>
+                                                </div></td>
+                                                <td>Materia Prima</td>
+                                                <td>1000</td>
+                                                <td>
+                                                    <div class="table-data-feature">
+                                                        <button class="item add" data-toggle="tooltip" data-placement="top"
+                                                            title="Agregar">
+                                                            <i class="zmdi zmdi-plus"></i>
+                                                        </button>
+                                                        <button class="item edit" data-toggle="tooltip" data-placement="top"
+                                                            title="Editar">
+                                                            <i class="zmdi zmdi-edit"></i>
+                                                        </button>
+                                                        <button class="item delete" data-toggle="tooltip" data-placement="top">
+                                                            <i class="zmdi zmdi-delete"></i>
+                                                        </button>
+                                                        <button class="item " data-toggle="tooltip" data-placement="top">
                                                             <i class="zmdi zmdi-more"></i>
                                                         </button>
                                                     </div>
@@ -536,54 +570,18 @@
                                                 <td>1000</td>
                                                 <td>
                                                     <div class="table-data-feature">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top"
-                                                            title="Send">
-                                                            <i class="zmdi zmdi-mail-send"></i>
+                                                        <button class="item add" data-toggle="tooltip" data-placement="top"
+                                                            title="Agregar">
+                                                            <i class="zmdi zmdi-plus"></i>
                                                         </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top"
-                                                            title="Edit">
+                                                        <button class="item edit" data-toggle="tooltip" data-placement="top"
+                                                            title="Editar">
                                                             <i class="zmdi zmdi-edit"></i>
                                                         </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top"
-                                                            title="Delete">
+                                                        <button class="item delete" data-toggle="tooltip" data-placement="top">
                                                             <i class="zmdi zmdi-delete"></i>
                                                         </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top"
-                                                            title="More">
-                                                            <i class="zmdi zmdi-more"></i>
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr class="spacer"></tr>
-                                            <tr class="tr-shadow">
-                                                
-                                                <td>BO</td>
-                                                <td>Bodega Quimícos</td>
-                                                <td class="desc">BodQu</td>
-                                                <td>
-                                                    <span class="status--process">Processed</span>
-                                                </td>
-                                                <td>San José</td>
-                                                <td>Metros</td>
-                                                <td>Materia Prima</td>
-                                                <td>1000</td>
-                                                <td>
-                                                    <div class="table-data-feature">
-                                                        <button class="item" data-toggle="tooltip" data-placement="top"
-                                                            title="Send">
-                                                            <i class="zmdi zmdi-mail-send"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top"
-                                                            title="Edit">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top"
-                                                            title="Delete">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top"
-                                                            title="More">
+                                                        <button class="item" data-toggle="tooltip" data-placement="top">
                                                             <i class="zmdi zmdi-more"></i>
                                                         </button>
                                                     </div>
@@ -595,6 +593,7 @@
                                     </table>
                                 </div>
                                 <!-- END DATA TABLE -->
+                                
                             </div>
                         </div>
                         <div class="row">
@@ -630,8 +629,7 @@
         <script src="vendor/circle-progress/circle-progress.min.js"></script>
         <script src="vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
         <script src="vendor/chartjs/Chart.bundle.min.js"></script>
-        <script src="vendor/select2/select2.min.js">
-        </script>
+        <script src="vendor/select2/select2.min.js"></script>
 
         <!-- Main JS-->
         <script src="js/main.js"></script>

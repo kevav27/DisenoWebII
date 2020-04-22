@@ -2,25 +2,109 @@
 (function ($) {
 
   $('#meal_preference').parent().append('<ul class="list-item" id="newmeal_preference" name="meal_preference"></ul>');
-  $('#meal_preference option').each(function(){
-      $('#newmeal_preference').append('<li value="' + $(this).val() + '">'+$(this).text()+'</li>');
+  $('#meal_preference option').each(function () {
+    $('#newmeal_preference').append('<li value="' + $(this).val() + '">' + $(this).text() + '</li>');
   });
   $('#meal_preference').remove();
   $('#newmeal_preference').attr('id', 'meal_preference');
   $('#meal_preference li').first().addClass('init');
-  $("#meal_preference").on("click", ".init", function() {
-      $(this).closest("#meal_preference").children('li:not(.init)').toggle();
+  $("#meal_preference").on("click", ".init", function () {
+    $(this).closest("#meal_preference").children('li:not(.init)').toggle();
   });
-  
+
   var allOptions = $("#meal_preference").children('li:not(.init)');
-  $("#meal_preference").on("click", "li:not(.init)", function() {
-      allOptions.removeClass('selected');
-      $(this).addClass('selected');
-      $("#meal_preference").children('.init').html($(this).html());
-      allOptions.toggle();
+  $("#meal_preference").on("click", "li:not(.init)", function () {
+    allOptions.removeClass('selected');
+    $(this).addClass('selected');
+    $("#meal_preference").children('.init').html($(this).html());
+    allOptions.toggle();
   });
   // USE STRICT
   "use strict";
+
+
+  try {
+    
+    // TABLE
+    $(document).ready(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+      var actions = ` <div class="table-data-feature">
+      <button class="item add" data-toggle="tooltip" data-placement="top"
+          title="Agregar">
+          <i class="zmdi zmdi-plus"></i>
+      </button>
+      <button class="item edit" data-toggle="tooltip" data-placement="top"
+          title="Editar">
+          <i class="zmdi zmdi-edit"></i>
+      </button>
+      <button class="item delete" data-toggle="tooltip" data-placement="top">
+          <i class="zmdi zmdi-delete"></i>
+      </button>
+      <button class="item" data-toggle="tooltip" data-placement="top">
+          <i class="zmdi zmdi-more"></i>
+      </button>
+  </div>
+`;
+      // Append table with add row form on add new button click
+      $(".add-new").click(function () {
+        $(this).attr("disabled", "disabled");
+        var index = $("table tbody tr:last-child").index();
+        var row =
+        '<tr>' + 
+            '<td><input type="text" name="bodegaCode" id="bodegaCode"></td>'+
+            '<td><input type="text" name="bodegaName" id="bodegaName"></td>'+
+            '<td class="desc"><input type="text" name="bodegaShortName" id="bodegaShortName"></td>'+
+            '<td class="alias"><input type="text" name="bodegaAlias" id="bodegaAlias"></td>'+
+            '<td><input type="text" name="bodega_Address" id="bodega_Address"></td>'+
+            '<td><select name="bodega_Medida" id="bodega_Medida"class="form-control"></select></td>' +
+            '<td><select name="bodega_Tipo" id="bodega_Tipo"class="form-control"></select></td>' +
+            '<td><input type="text" name="bodega_Espacio" id="bodega_Espacio"></td>'+
+            '<td>'+ actions +'</td>'  +
+        '</tr>';
+        $("table").append(row);
+        $("table tbody tr").eq(index + 1).find(".edit").toggle();
+        
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+      // Add row on add button click
+      $(document).on("click", ".add", function(){
+        var empty = false;
+        var input = $(this).parents("tr").find('input[type="text"]');
+            input.each(function(){
+          if(!$(this).val()){
+            $(this).addClass("error");
+            empty = true;
+          } else{
+                    $(this).removeClass("error");
+                }
+        });
+        $(this).parents("tr").find(".error").first().focus();
+        if(!empty){
+          input.each(function(){
+            $(this).parent("td").html($(this).val());
+          });			
+          $(this).parents("tr").find(".add, .edit").toggle();
+          $(".add-new").removeAttr("disabled");
+          
+        }		
+        });
+      // Edit row on edit button click
+      $(document).on("click", ".edit", function () {
+        $(this).parents("tr").find("td:not(:last-child)").each(function () {
+          $(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
+        });
+        $(this).parents("tr").find(".add, .edit").toggle();
+        $(".add-new").attr("disabled", "disabled");
+      });
+      // Delete row on delete button click
+      $(document).on("click", ".delete", function () {
+        $(this).parents("tr").remove();
+        $(".add-new").removeAttr("disabled");
+      });
+    });
+  } catch (error) {
+    console.log(error);
+  }
 
   try {
     //WidgetChart 1
@@ -86,7 +170,7 @@
           }
         }
       });
-      
+
     }
 
 
@@ -1273,193 +1357,34 @@
 
 
 (function ($) {
-    // USE STRICT
-    "use strict";
-    $(".animsition").animsition({
-      inClass: 'fade-in',
-      outClass: 'fade-out',
-      inDuration: 900,
-      outDuration: 900,
-      linkElement: 'a:not([target="_blank"]):not([href^="#"]):not([class^="chosen-single"])',
-      loading: true,
-      loadingParentElement: 'html',
-      loadingClass: 'page-loader',
-      loadingInner: '<div class="page-loader__spin"></div>',
-      timeout: false,
-      timeoutCountdown: 5000,
-      onLoadEvent: true,
-      browser: ['animation-duration', '-webkit-animation-duration'],
-      overlay: false,
-      overlayClass: 'animsition-overlay-slide',
-      overlayParentElement: 'html',
-      transition: function (url) {
-        window.location.href = url;
-      }
-    });
-  
-  
-  })(jQuery);
-(function ($) {
   // USE STRICT
   "use strict";
-
-  // Map
-  try {
-
-    var vmap = $('#vmap');
-    if(vmap[0]) {
-      vmap.vectorMap( {
-        map: 'world_en',
-        backgroundColor: null,
-        color: '#ffffff',
-        hoverOpacity: 0.7,
-        selectedColor: '#1de9b6',
-        enableZoom: true,
-        showTooltip: true,
-        values: sample_data,
-        scaleColors: [ '#1de9b6', '#03a9f5'],
-        normalizeFunction: 'polynomial'
-      });
+  $(".animsition").animsition({
+    inClass: 'fade-in',
+    outClass: 'fade-out',
+    inDuration: 900,
+    outDuration: 900,
+    linkElement: 'a:not([target="_blank"]):not([href^="#"]):not([class^="chosen-single"])',
+    loading: true,
+    loadingParentElement: 'html',
+    loadingClass: 'page-loader',
+    loadingInner: '<div class="page-loader__spin"></div>',
+    timeout: false,
+    timeoutCountdown: 5000,
+    onLoadEvent: true,
+    browser: ['animation-duration', '-webkit-animation-duration'],
+    overlay: false,
+    overlayClass: 'animsition-overlay-slide',
+    overlayParentElement: 'html',
+    transition: function (url) {
+      window.location.href = url;
     }
-
-  } catch (error) {
-    console.log(error);
-  }
-
-  // Europe Map
-  try {
-    
-    var vmap1 = $('#vmap1');
-    if(vmap1[0]) {
-      vmap1.vectorMap( {
-        map: 'europe_en',
-        color: '#007BFF',
-        borderColor: '#fff',
-        backgroundColor: '#fff',
-        enableZoom: true,
-        showTooltip: true
-      });
-    }
-
-  } catch (error) {
-    console.log(error);
-  }
-
-  // USA Map
-  try {
-    
-    var vmap2 = $('#vmap2');
-
-    if(vmap2[0]) {
-      vmap2.vectorMap( {
-        map: 'usa_en',
-        color: '#007BFF',
-        borderColor: '#fff',
-        backgroundColor: '#fff',
-        enableZoom: true,
-        showTooltip: true,
-        selectedColor: null,
-        hoverColor: null,
-        colors: {
-            mo: '#001BFF',
-            fl: '#001BFF',
-            or: '#001BFF'
-        },
-        onRegionClick: function ( event, code, region ) {
-            event.preventDefault();
-        }
-      });
-    }
-
-  } catch (error) {
-    console.log(error);
-  }
-
-  // Germany Map
-  try {
-    
-    var vmap3 = $('#vmap3');
-    if(vmap3[0]) {
-      vmap3.vectorMap( {
-        map: 'germany_en',
-        color: '#007BFF',
-        borderColor: '#fff',
-        backgroundColor: '#fff',
-        onRegionClick: function ( element, code, region ) {
-            var message = 'You clicked "' + region + '" which has the code: ' + code.toUpperCase();
-
-            alert( message );
-        }
-      });
-    }
-    
-  } catch (error) {
-    console.log(error);
-  }
-  
-  // France Map
-  try {
-    
-    var vmap4 = $('#vmap4');
-    if(vmap4[0]) {
-      vmap4.vectorMap( {
-        map: 'france_fr',
-        color: '#007BFF',
-        borderColor: '#fff',
-        backgroundColor: '#fff',
-        enableZoom: true,
-        showTooltip: true
-      });
-    }
-
-  } catch (error) {
-    console.log(error);
-  }
-
-  // Russia Map
-  try {
-    var vmap5 = $('#vmap5');
-    if(vmap5[0]) {
-      vmap5.vectorMap( {
-        map: 'russia_en',
-        color: '#007BFF',
-        borderColor: '#fff',
-        backgroundColor: '#fff',
-        hoverOpacity: 0.7,
-        selectedColor: '#999999',
-        enableZoom: true,
-        showTooltip: true,
-        scaleColors: [ '#C8EEFF', '#006491' ],
-        normalizeFunction: 'polynomial'
-      });
-    }
+  });
 
 
-  } catch (error) {
-    console.log(error);
-  }
-  
-  // Brazil Map
-  try {
-    
-    var vmap6 = $('#vmap6');
-    if(vmap6[0]) {
-      vmap6.vectorMap( {
-        map: 'brazil_br',
-        color: '#007BFF',
-        borderColor: '#fff',
-        backgroundColor: '#fff',
-        onRegionClick: function ( element, code, region ) {
-            var message = 'You clicked "' + region + '" which has the code: ' + code.toUpperCase();
-            alert( message );
-        }
-      });
-    }
-
-  } catch (error) {
-    console.log(error);
-  }
 })(jQuery);
+
+
 (function ($) {
   // Use Strict
   "use strict";
@@ -1481,8 +1406,8 @@
             });
           }
         }, {
-            offset: 'bottom-in-view'
-          });
+          offset: 'bottom-in-view'
+        });
 
       });
     });
@@ -1497,8 +1422,8 @@
   // Scroll Bar
   try {
     var jscr1 = $('.js-scrollbar1');
-    if(jscr1[0]) {
-      const ps1 = new PerfectScrollbar('.js-scrollbar1');      
+    if (jscr1[0]) {
+      const ps1 = new PerfectScrollbar('.js-scrollbar1');
     }
 
     var jscr2 = $('.js-scrollbar2');
@@ -1544,7 +1469,7 @@
     for (var i = 0; i < menu.length; i++) {
       $(menu[i]).on('click', function (e) {
         e.preventDefault();
-        $('.js-right-sidebar').removeClass("show-sidebar");        
+        $('.js-right-sidebar').removeClass("show-sidebar");
         if (jQuery.inArray(this, menu) == sub_menu_is_showed) {
           $(this).toggleClass('show-dropdown');
           sub_menu_is_showed = -1;
@@ -1574,28 +1499,28 @@
   }
 
   var wW = $(window).width();
-    // Right Sidebar
-    var right_sidebar = $('.js-right-sidebar');
-    var sidebar_btn = $('.js-sidebar-btn');
+  // Right Sidebar
+  var right_sidebar = $('.js-right-sidebar');
+  var sidebar_btn = $('.js-sidebar-btn');
 
-    sidebar_btn.on('click', function (e) {
-      e.preventDefault();
-      for (var i = 0; i < menu.length; i++) {
-        menu[i].classList.remove("show-dropdown");
-      }
-      sub_menu_is_showed = -1;
-      right_sidebar.toggleClass("show-sidebar");
-    });
+  sidebar_btn.on('click', function (e) {
+    e.preventDefault();
+    for (var i = 0; i < menu.length; i++) {
+      menu[i].classList.remove("show-dropdown");
+    }
+    sub_menu_is_showed = -1;
+    right_sidebar.toggleClass("show-sidebar");
+  });
 
-    $(".js-right-sidebar, .js-sidebar-btn").click(function (event) {
-      event.stopPropagation();
-    });
+  $(".js-right-sidebar, .js-sidebar-btn").click(function (event) {
+    event.stopPropagation();
+  });
 
-    $("body,html").on("click", function () {
-      right_sidebar.removeClass("show-sidebar");
+  $("body,html").on("click", function () {
+    right_sidebar.removeClass("show-sidebar");
 
-    });
- 
+  });
+
 
   // Sublist Sidebar
   try {
@@ -1663,7 +1588,7 @@
   "use strict";
 
   try {
-    
+
     $('[data-toggle="tooltip"]').tooltip();
 
   } catch (error) {
@@ -1674,14 +1599,14 @@
   try {
     var inbox_wrap = $('.js-inbox');
     var message = $('.au-message__item');
-    message.each(function(){
+    message.each(function () {
       var that = $(this);
 
-      that.on('click', function(){
+      that.on('click', function () {
         $(this).parent().parent().parent().toggleClass('show-chat-box');
       });
     });
-    
+
 
   } catch (error) {
     console.log(error);
