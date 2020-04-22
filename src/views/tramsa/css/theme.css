@@ -1,54 +1,13 @@
-/*------------------------------------------------------------------
-[Master Stylesheet]
-
-Project:  CoolAdmin
-Version:	1.0
-Last change:	08/10/2018 [Add Define a table of contents Link]
-Primary use:	Open Source
--------------------------------------------------------------------*/
-/*------------------------------------------------------------------
-[LAYOUT]
-
-* body
-    + Header / header
-	+ Page Content / .page-content .name-page
-        + Section Layouts / section .name-section
-        ...
-	+ Footer / footer
-
--------------------------------------------------------------------*/
-/*------------------------------------------------------------------
-# [Color codes]
-
-# Text Color (text): #666666
-# Text Color Deep (Text, title): #333333
-
-------------------------------------------------------------------*/
-/*------------------------------------------------------------------
-[Typography]
-
-Notes:	decreasing heading by 0.4em with every subsequent heading level
--------------------------------------------------------------------*/
-/*-----------------------------------------------------*/
-/*                   SETTINGS                          */
-/*-----------------------------------------------------*/
-/*-----------------------------------------------------*/
-/*                   TOOLS                             */
-/*-----------------------------------------------------*/
-/*-----------------------------------------------------*/
-/*                   GENERIC                           */
-/*-----------------------------------------------------*/
-/* ----- Normalize ----- */
-
-
-
-
 .signup-form {
   margin-top: -20px; }
 
 .register-form {
   padding: 93px 115px 90px 80px;
   margin-bottom: -8px; }
+
+  .container-fluid {
+      padding-left: 40px;
+  }
 
 .form-row {
   margin: 0 -80px; }
@@ -4942,6 +4901,12 @@ section {
     text-transform: capitalize;
     padding: 18px 40px;
     padding-right: 10px;
+
+    vertical-align: top;
+    overflow: inherit;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
 }
 
 .table-data3 thead tr th:first-child {
@@ -4990,6 +4955,10 @@ section {
     color: #808080;
     padding: 12px 40px;
     padding-right: 10px;
+    font-size: 14px;
+    color: #808080;
+    vertical-align: middle;
+    border: none;
 }
 
 .table-data3 tbody td.process {
