@@ -6,8 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
     <!-- Title Page-->
-    <title>Bodegas</title>
+    <title>Clientes Consultas</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -65,12 +66,12 @@
 
                             </ul>
                         </li>
-                        <li class="active has-sub">
+                        <li class=" has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-gears"></i>Administrador
                             </a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li class="active">
+                                <li>
                                     <a href="bodegas.html">Bodegas</a>
                                 </li>
                                 <li>
@@ -116,7 +117,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class=" has-sub">
+                        <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fa fa-lock"></i>Seguridad
                             </a>
@@ -131,10 +132,28 @@
                                     <a href="usuarios.html">Usuarios</a>
                                 </li>
                                 <li>
-                                    <a href="bitacorasConsultas.html">Bitacoras</a>
+                                    <a href="bitacorasRegistro.html">Bitacoras</a>
                                 </li>
                             </ul>
                         </li>
+                        <li class="active has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fa fa-file-text"></i>Consultas
+                            </a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="bitacorasConsultas.html">Bitácora</a>
+                                </li>
+                                <li class="active">
+                                    <a href="clientesConsultas.html">Clientes</a>
+                                </li>
+                                <li>
+                                    <a href="pedidosPendientesConsultas.html">Pedidos Pendientes</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        
                         
                     </ul>
                 </div>
@@ -166,12 +185,12 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="active has-sub">
+                        <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-gears"></i>Administrador
                             </a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li class="active">
+                                <li>
                                     <a href="bodegas.html">Bodegas</a>
                                 </li>
                                 <li>
@@ -225,15 +244,32 @@
                                 <li>
                                     <a href="eventos.html">Eventos</a>
                                 </li>
-                                <lia>
+                                <li>
                                     <a href="roles.html">Roles</a>
                                 </li>
                                 <li>
                                     <a href="usuarios.html">Usuarios</a>
                                 </li>
                                 <li>
-                                    <a href="bitacorasRegistro.html">Bitacoras</a>
+                                    <a href="bitacorasRegistro.html">Registro Bitacora</a>
                                 </li>
+                            </ul>
+                        </li>
+                        <li class="active has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fa fa-file-text"></i>Consultas
+                            </a>
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                <li>
+                                    <a href="bitacorasConsultas.html">Bitácora</a>
+                                </li>
+                                <li class="active">
+                                    <a href="clientesConsultas.html">Clientes</a>
+                                </li>
+                                <li>
+                                    <a href="pedidosPendientesConsultas.html">Pedidos Pendientes</a>
+                                </li>
+                                
                             </ul>
                         </li>
                         
@@ -347,252 +383,71 @@
                         <div class="row">
                             <div class="col-md-10">
                                 <div class="overview-wrap">
-                                    <h2 class="title-1">Mantenimiento de Bodegas</h2>
+                                    <h2 class="title-1">Listado de Clientes</h2>
                                     <button class="au-btn au-btn-icon au-btn--blue">
-                                        <i class="zmdi zmdi-plus"></i>Agregar
+                                        <i class="zmdi zmdi-refresh"></i>Actualizar
                                     </button>
                                 </div>
                             </div>
                         </div>
                         <div class="row m-t-25"></div>
-                        <div class="row">
-                            <div class="col-lg-20" style="width: 780px;">
-                                <div class="au-card recent-report">
-                                    <div class="au-card-inner">
-                                        <h3 class="title-2">Registro</h3>
-                                        <div class="signup-form">
-                                            <form class="register-form" id="register-form">
-                                                <div class="form-row">
-                                                    <div class="form-group">
-                                                        <div class="form-input">
-                                                            <label for="bodegaCode" class="required">Código de
-                                                                Bodega</label>
-                                                            <input type="text" name="bodegaCode" id="bodegaCode" />
-                                                        </div>
-                                                        <div class="form-input">
-                                                            <label for="bodegaName" class="required">Nombre</label>
-                                                            <input type="text" name="bodegaName" id="bodegaName" />
-                                                        </div>
-                                                        <div class="form-input">
-                                                            <label for="bodegaShortName" class="required">Nombre Corto</label>
-                                                            <input type="text" name="bodegaShortName" id="bodegaShortName" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <div class="form-input">
-                                                            <label for="bodegaAlias" class="required">Alias</label>
-                                                            <input type="text" name="bodegaAlias" id="bodegaAlias" />
-                                                        </div>
-                                                        <div class="form-input">
-                                                            <label for="bodega_Address"
-                                                                class="required">Ubicación</label>
-                                                            <textarea type="text" name="bodega_Address"
-                                                                id="bodega_Address" rows="4"></textarea>
-                                                        </div>
-                                                        <div class="select-list">
-                                                            <label for="bodega_Medida" class="required">Unidad de
-                                                                Medida</label>
-                                                            <select name="bodega_Medida" id="bodega_Medida"
-                                                                class="form-control">
-                                                                <option value="0">Seleccione una Opción</option>
-                                                                <option value="1">Metros</option>
-                                                                <option value="2">Metros Cúbicos</option>
-                                                                <option value="3">Metros Cuadrados</option>
-                                                                <option value="4">Litros</option>
-                                                                <option value="3">Mililitros</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="select-list">
-                                                            <label for="bodega_Tipo" class="required">Tipo de
-                                                                Bodega</label>
-                                                            <select name="bodega_Tipo" id="bodega_Tipo"
-                                                                class="form-control">
-                                                                <option value="0">Seleccione una Opción</option>
-                                                                <option value="1">Materia Prima</option>
-                                                                <option value="2">Producto Final</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="form-input">
-                                                            <label for="bodega_Espacio" class="required">Espacio de
-                                                                Bodega</label>
-                                                            <input type="text" name="bodega_Espacio"
-                                                                id="bodega_Espacio" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                        </div>
-                                        <div class="form-submit">
-                                            <input type="submit" value="Submit" class="submit" id="submit"
-                                                name="submit" />
-                                            <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
-                                        </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="row m-t-25"></div>
+
 
                         <div class="row">
                             <div class="col-md-12">
                                 <!-- DATA TABLE -->
-                                <h3 class="title-5 m-b-35">Bodegas</h3>
                                 <div class="table-data__tool">
                                     <div class="table-data__tool-left">
                                         <div class="rs-select2--light rs-select2--md">
                                             <select class="js-select2" name="property">
                                                 <option selected="selected">Propiedades</option>
-                                                <option value="">Código</option>
-                                                <option value="">Nombre Corto</option>
+                                                <option value="">Lista General</option>
+                                                <option value="">Lista por Estado</option>
                                             </select>
                                             <div class="dropDownSelect2"></div>
                                         </div>
-
                                         <button class="au-btn-filter">
                                             <i class="zmdi zmdi-filter-list"></i>Filtrar</button>
                                     </div>
-                                    <div class="table-data__tool-right">
-
-                                        <div class="rs-select2--light">
-                                            <form class="form-header" action="" method="">
-                                                <input class="au-input " type="text" name="search" placeholder="Buscar" />
-                                                <button class="au-btn--submit" type="submit">
-                                                    <i class="zmdi zmdi-search"></i>
-                                                </button>
-                                            </form>
-                                        </div>
-                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small add-new">
-                                            <i class="zmdi zmdi-plus"></i>Agregar</button>              
-                                    </div>
+                                    
                                 </div>
                                 <div class="table-responsive table-responsive-data3">
                                     <table class="table table-data2">
                                         <thead>
                                             <tr>
-                                                <th>Código</th>
-                                                <th>Nombre</th>
-                                                <th>Nombre Corto</th>
-                                                <th>Alias</th>
-                                                <th>Ubicación</th>
-                                                <th>Medida</th>
-                                                <th>Tipo</th>
-                                                <th>Espacio</th>
-                                                <th></th>
-
+                                                <th>Documento de Identificación</th>
+                                                <th>Nombre Completo</th>
+                                                <th>Correo Electrónico</th>
+                                                <th>Teléfono Habitación</th>
+                                                <th>Teléfono Celuar</th>
+                                                <th>Teléfono Trabajo</th>
+                                                <th>Estado</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr class="tr-shadow">
-                                                
-                                                <td>BO</td>
-                                                <td>Bodega Quimícos</td>
-                                                <td class="desc">BodQu</td>
+
+                                                <td>01-1342-1357</td>
+                                                <td class="desc">Guillermo Villegas Chávez</td>
                                                 <td>
-                                                    <span class="status--process">Processed</span>
-                                                </td>
-                                                <td>San José</td>
-                                                <td>Metros</td>
-                                                <td>Materia Prima</td>
-                                                <td>1000</td>
+                                                    <span class="block-email">lori@example.com</span>
+                                                </td>                                                                            
+                                                <td>8732-3969</td>
+                                                <td>2339-3969</td>
+                                                <td>4920-3969</td>
                                                 <td>
-                                                    <div class="table-data-feature">
-                                                        <button class="item add" data-toggle="tooltip" data-placement="top"
-                                                            title="Agregar">
-                                                            <i class="zmdi zmdi-plus"></i>
-                                                        </button>
-                                                        <button class="item edit" data-toggle="tooltip" data-placement="top"
-                                                            title="Editar">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                        <button class="item delete" data-toggle="tooltip" data-placement="top">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button>
-                                                        <button class="item " data-toggle="tooltip" data-placement="top">
-                                                            <i class="zmdi zmdi-more"></i>
-                                                        </button>
-                                                    </div>
-                                                </td>
+                                                    <span class="status--process">Activo</span>
+                                                </td>                                                
                                             </tr>
                                             <tr class="spacer"></tr>
-                                            <tr class="tr-shadow">
-                                                
-                                                <td>BO</td>
-                                                <td>Bodega Quimícos</td>
-                                                <td class="desc">BodQu</td>
-                                                <td>
-                                                    <span class="status--process">Processed</span>
-                                                </td>
-                                                <td>San José</td>
-                                                <td><div class="rs-select2--trans rs-select2--sm">
-                                                    <select class="js-select2" name="property">
-                                                        <option selected="selected">Metros</option>
-                                                        <option value="">Post</option>
-                                                        <option value="">Watch</option>
-                                                    </select>
-                                                    <div class="dropDownSelect2"></div>
-                                                </div></td>
-                                                <td>Materia Prima</td>
-                                                <td>1000</td>
-                                                <td>
-                                                    <div class="table-data-feature">
-                                                        <button class="item add" data-toggle="tooltip" data-placement="top"
-                                                            title="Agregar">
-                                                            <i class="zmdi zmdi-plus"></i>
-                                                        </button>
-                                                        <button class="item edit" data-toggle="tooltip" data-placement="top"
-                                                            title="Editar">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                        <button class="item delete" data-toggle="tooltip" data-placement="top">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button>
-                                                        <button class="item " data-toggle="tooltip" data-placement="top">
-                                                            <i class="zmdi zmdi-more"></i>
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr class="spacer"></tr>
-                                            <tr class="tr-shadow">
-                                                
-                                                <td>BO</td>
-                                                <td>Bodega Quimícos</td>
-                                                <td class="desc">BodQu</td>
-                                                <td>
-                                                    <span class="status--process">Processed</span>
-                                                </td>
-                                                <td>San José</td>
-                                                <td>Metros</td>
-                                                <td>Materia Prima</td>
-                                                <td>1000</td>
-                                                <td>
-                                                    <div class="table-data-feature">
-                                                        <button class="item add" data-toggle="tooltip" data-placement="top"
-                                                            title="Agregar">
-                                                            <i class="zmdi zmdi-plus"></i>
-                                                        </button>
-                                                        <button class="item edit" data-toggle="tooltip" data-placement="top"
-                                                            title="Editar">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                        <button class="item delete" data-toggle="tooltip" data-placement="top">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top">
-                                                            <i class="zmdi zmdi-more"></i>
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr class="spacer"></tr>
-                                            
                                         </tbody>
                                     </table>
                                 </div>
                                 <!-- END DATA TABLE -->
-                                
                             </div>
                         </div>
+
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">

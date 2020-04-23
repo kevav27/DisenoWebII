@@ -6,8 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
     <!-- Title Page-->
-    <title>Bodegas</title>
+    <title>Eventos</title>
 
     <!-- Fontfaces CSS-->
     <link href="css/font-face.css" rel="stylesheet" media="all">
@@ -65,12 +66,12 @@
 
                             </ul>
                         </li>
-                        <li class="active has-sub">
+                        <li class=" has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-gears"></i>Administrador
                             </a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li class="active">
+                                <li>
                                     <a href="bodegas.html">Bodegas</a>
                                 </li>
                                 <li>
@@ -93,7 +94,6 @@
                                 </li>
                             </ul>
                         </li>
-                        
                         <li class=" has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-refresh"></i>Procesos</a>
@@ -116,12 +116,12 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class=" has-sub">
+                        <li class="active has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fa fa-lock"></i>Seguridad
                             </a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
+                                <li class="active">
                                     <a href="eventos.html">Eventos</a>
                                 </li>
                                 <li>
@@ -131,7 +131,7 @@
                                     <a href="usuarios.html">Usuarios</a>
                                 </li>
                                 <li>
-                                    <a href="bitacorasConsultas.html">Bitacoras</a>
+                                    <a href="bitacorasRegistro.html">Bitacoras</a>
                                 </li>
                             </ul>
                         </li>
@@ -166,12 +166,12 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="active has-sub">
+                        <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-gears"></i>Administrador
                             </a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li class="active">
+                                <li>
                                     <a href="bodegas.html">Bodegas</a>
                                 </li>
                                 <li>
@@ -194,7 +194,7 @@
                                 </li>
                             </ul>
                         </li>
-                        
+                       
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-refresh"></i>Procesos
@@ -347,7 +347,7 @@
                         <div class="row">
                             <div class="col-md-10">
                                 <div class="overview-wrap">
-                                    <h2 class="title-1">Mantenimiento de Bodegas</h2>
+                                    <h2 class="title-1">Mantenimiento de Eventos</h2>
                                     <button class="au-btn au-btn-icon au-btn--blue">
                                         <i class="zmdi zmdi-plus"></i>Agregar
                                     </button>
@@ -355,7 +355,9 @@
                             </div>
                         </div>
                         <div class="row m-t-25"></div>
+                        
                         <div class="row">
+                            
                             <div class="col-lg-20" style="width: 780px;">
                                 <div class="au-card recent-report">
                                     <div class="au-card-inner">
@@ -365,58 +367,22 @@
                                                 <div class="form-row">
                                                     <div class="form-group">
                                                         <div class="form-input">
-                                                            <label for="bodegaCode" class="required">Código de
-                                                                Bodega</label>
-                                                            <input type="text" name="bodegaCode" id="bodegaCode" />
+                                                            <label for="eventoName" class="required">Nombre del Evento</label>
+                                                            <input type="text" name="eventoName" id="eventoName" />
+                                                        </div> 
+                                                        <div class="form-input">
+                                                            <label for="eventoCode" class="required">Código del Evento</label>
+                                                            <input type="text" name="eventoCode" id="eventoCode" />
                                                         </div>
                                                         <div class="form-input">
-                                                            <label for="bodegaName" class="required">Nombre</label>
-                                                            <input type="text" name="bodegaName" id="bodegaName" />
-                                                        </div>
+                                                            <label for="eventoShortName" class="required">Nombre Corto</label>
+                                                            <input type="text" name="eventoShortName" id="eventoShortName" />
+                                                        </div> 
                                                         <div class="form-input">
-                                                            <label for="bodegaShortName" class="required">Nombre Corto</label>
-                                                            <input type="text" name="bodegaShortName" id="bodegaShortName" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <div class="form-input">
-                                                            <label for="bodegaAlias" class="required">Alias</label>
-                                                            <input type="text" name="bodegaAlias" id="bodegaAlias" />
-                                                        </div>
-                                                        <div class="form-input">
-                                                            <label for="bodega_Address"
-                                                                class="required">Ubicación</label>
-                                                            <textarea type="text" name="bodega_Address"
-                                                                id="bodega_Address" rows="4"></textarea>
-                                                        </div>
-                                                        <div class="select-list">
-                                                            <label for="bodega_Medida" class="required">Unidad de
-                                                                Medida</label>
-                                                            <select name="bodega_Medida" id="bodega_Medida"
-                                                                class="form-control">
-                                                                <option value="0">Seleccione una Opción</option>
-                                                                <option value="1">Metros</option>
-                                                                <option value="2">Metros Cúbicos</option>
-                                                                <option value="3">Metros Cuadrados</option>
-                                                                <option value="4">Litros</option>
-                                                                <option value="3">Mililitros</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="select-list">
-                                                            <label for="bodega_Tipo" class="required">Tipo de
-                                                                Bodega</label>
-                                                            <select name="bodega_Tipo" id="bodega_Tipo"
-                                                                class="form-control">
-                                                                <option value="0">Seleccione una Opción</option>
-                                                                <option value="1">Materia Prima</option>
-                                                                <option value="2">Producto Final</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="form-input">
-                                                            <label for="bodega_Espacio" class="required">Espacio de
-                                                                Bodega</label>
-                                                            <input type="text" name="bodega_Espacio"
-                                                                id="bodega_Espacio" />
+                                                            <label for="eventoDescripcion"
+                                                                class="required">Descripción</label>
+                                                            <textarea type="text" name="eventoDescripcion"
+                                                                id="eventoDescripcion" rows="3"></textarea>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -436,14 +402,14 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <!-- DATA TABLE -->
-                                <h3 class="title-5 m-b-35">Bodegas</h3>
+                                <h3 class="title-5 m-b-35">Eventos</h3>
                                 <div class="table-data__tool">
                                     <div class="table-data__tool-left">
                                         <div class="rs-select2--light rs-select2--md">
                                             <select class="js-select2" name="property">
                                                 <option selected="selected">Propiedades</option>
                                                 <option value="">Código</option>
-                                                <option value="">Nombre Corto</option>
+                                                <option value="">Descripción</option>
                                             </select>
                                             <div class="dropDownSelect2"></div>
                                         </div>
@@ -472,11 +438,7 @@
                                                 <th>Código</th>
                                                 <th>Nombre</th>
                                                 <th>Nombre Corto</th>
-                                                <th>Alias</th>
-                                                <th>Ubicación</th>
-                                                <th>Medida</th>
-                                                <th>Tipo</th>
-                                                <th>Espacio</th>
+                                                <th>Descripción</th>
                                                 <th></th>
 
                                             </tr>
@@ -484,16 +446,10 @@
                                         <tbody>
                                             <tr class="tr-shadow">
                                                 
-                                                <td>BO</td>
-                                                <td>Bodega Quimícos</td>
-                                                <td class="desc">BodQu</td>
-                                                <td>
-                                                    <span class="status--process">Processed</span>
-                                                </td>
-                                                <td>San José</td>
-                                                <td>Metros</td>
-                                                <td>Materia Prima</td>
-                                                <td>1000</td>
+                                                <td>Crear Usuario</td>
+                                                <td class="desc">CreUs</td>
+                                                <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+                                                
                                                 <td>
                                                     <div class="table-data-feature">
                                                         <button class="item add" data-toggle="tooltip" data-placement="top"
@@ -508,77 +464,6 @@
                                                             <i class="zmdi zmdi-delete"></i>
                                                         </button>
                                                         <button class="item " data-toggle="tooltip" data-placement="top">
-                                                            <i class="zmdi zmdi-more"></i>
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr class="spacer"></tr>
-                                            <tr class="tr-shadow">
-                                                
-                                                <td>BO</td>
-                                                <td>Bodega Quimícos</td>
-                                                <td class="desc">BodQu</td>
-                                                <td>
-                                                    <span class="status--process">Processed</span>
-                                                </td>
-                                                <td>San José</td>
-                                                <td><div class="rs-select2--trans rs-select2--sm">
-                                                    <select class="js-select2" name="property">
-                                                        <option selected="selected">Metros</option>
-                                                        <option value="">Post</option>
-                                                        <option value="">Watch</option>
-                                                    </select>
-                                                    <div class="dropDownSelect2"></div>
-                                                </div></td>
-                                                <td>Materia Prima</td>
-                                                <td>1000</td>
-                                                <td>
-                                                    <div class="table-data-feature">
-                                                        <button class="item add" data-toggle="tooltip" data-placement="top"
-                                                            title="Agregar">
-                                                            <i class="zmdi zmdi-plus"></i>
-                                                        </button>
-                                                        <button class="item edit" data-toggle="tooltip" data-placement="top"
-                                                            title="Editar">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                        <button class="item delete" data-toggle="tooltip" data-placement="top">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button>
-                                                        <button class="item " data-toggle="tooltip" data-placement="top">
-                                                            <i class="zmdi zmdi-more"></i>
-                                                        </button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr class="spacer"></tr>
-                                            <tr class="tr-shadow">
-                                                
-                                                <td>BO</td>
-                                                <td>Bodega Quimícos</td>
-                                                <td class="desc">BodQu</td>
-                                                <td>
-                                                    <span class="status--process">Processed</span>
-                                                </td>
-                                                <td>San José</td>
-                                                <td>Metros</td>
-                                                <td>Materia Prima</td>
-                                                <td>1000</td>
-                                                <td>
-                                                    <div class="table-data-feature">
-                                                        <button class="item add" data-toggle="tooltip" data-placement="top"
-                                                            title="Agregar">
-                                                            <i class="zmdi zmdi-plus"></i>
-                                                        </button>
-                                                        <button class="item edit" data-toggle="tooltip" data-placement="top"
-                                                            title="Editar">
-                                                            <i class="zmdi zmdi-edit"></i>
-                                                        </button>
-                                                        <button class="item delete" data-toggle="tooltip" data-placement="top">
-                                                            <i class="zmdi zmdi-delete"></i>
-                                                        </button>
-                                                        <button class="item" data-toggle="tooltip" data-placement="top">
                                                             <i class="zmdi zmdi-more"></i>
                                                         </button>
                                                     </div>
@@ -586,11 +471,50 @@
                                             </tr>
                                             <tr class="spacer"></tr>
                                             
+                                            
+                                            
                                         </tbody>
                                     </table>
                                 </div>
                                 <!-- END DATA TABLE -->
-                                
+                                <section class="activity activity2">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="activity__item activity__item--green">
+                                                    <span class="desc">Modificar Socios</span>
+                                                    <div class="icon">
+                                                        <i class="zmdi zmdi-account-o"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="activity__item activity__item--orange">
+                                                    <span class="desc">Realizar Facturas</span>
+                                                    <div class="icon">
+                                                        <i class="zmdi zmdi-copy"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="activity__item activity__item--blue">
+                                                    <span class="desc">Eliminar Usuario</span>
+                                                    <div class="icon">
+                                                        <i class="zmdi zmdi-delete"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="activity__item activity__item--red">
+                                                    <span class="desc">Nuevo Rol</span>
+                                                    <div class="icon">
+                                                        <i class="zmdi zmdi-plus"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
                             </div>
                         </div>
                         <div class="row">
