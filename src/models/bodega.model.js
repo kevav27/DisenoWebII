@@ -31,8 +31,8 @@ const BodegaSchema = new Schema(
       required:true
     },
     espacioBodega:{
-      type:String,
-      required: no
+      type:Number,
+      required: false
     }
   },
   {

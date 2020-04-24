@@ -1,0 +1,11 @@
+ <PARA LLAMAR PANTALLAS> Investigar cómo enviar y recibir datos sin hbs
+ 
+ res.sendFile('login.html', {
+    root: 'src/views/tramsa/'
+  });
+
+  <PARA VALIDAR CAMPOS>
+  <input name="Descripcion" type="text" class="form-control" id="validationCustom02" required>
+
+  <Para editar solamente campos recibidos>
+  Persona.findOneAndUpdate({ dni: req.params.dni }, { $set: req.body }, { new: true})

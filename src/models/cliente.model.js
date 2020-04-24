@@ -6,6 +6,11 @@ const ClienteSchema = new Schema(
       type: String,
       required: true
     },
+    nombreCorto:{
+      type:String,
+      required: true
+    }
+    ,
     fechaIngreso: {
       type: Date,
       required: true

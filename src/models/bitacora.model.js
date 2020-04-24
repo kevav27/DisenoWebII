@@ -18,8 +18,8 @@ const BitacoraSchema = new Schema(
   {
     timestamps: true
   }, {
-      collection: "eventos"
+      collection: "bitacora"
   }
 );
 
-module.exports = model("Evento", EventoSchema);
+module.exports = model("Bitacora", BitacoraSchema);

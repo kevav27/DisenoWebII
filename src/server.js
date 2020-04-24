@@ -18,12 +18,27 @@ app.use(bodyParser.json());
 
 // routes
 app.use(require('./routes/camion.routes'));
-//Al ser una API de consumo, no se necesitan pantallas. Una simple ruta que defina un mensaje básico es suficiente.
-app.get('/', (req, res) => {
-  res.send("API for Tramsa Ready");
-});
+app.use(require('./routes/bodega.routes'));/*
+app.use(require('./routes/bitacora.routes'));
+app.use(require('./routes/cliente.routes'));
+app.use(require('./routes/eventos.routes'));
+app.use(require('./routes/materiaPrima.routes'));
+app.use(require('./routes/parametro.routes'));
+app.use(require('./routes/producto.routes'));
+app.use(require('./routes/proveedor.routes'));
+app.use(require('./routes/rol.routes'));
+app.use(require('./routes/tipoMateriaPrima.routes'));
+app.use(require('./routes/usuario.routes'));*/
 
 // static files
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '/views/tramsa')));
+
+app.get('/', (req, res) => {
+  res.sendFile('login.html', {
+    root: 'src/views/tramsa/'
+  });
+});
+
+
 
 module.exports = app;
