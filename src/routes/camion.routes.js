@@ -3,6 +3,8 @@ const router = express.Router();
 
 // Controller
 const {
+    renderCamionForm,
+    renderActualizarCamionForm,
     crearNuevoCamion,
     listarCamiones,
     obtenerCamion,
@@ -12,6 +14,7 @@ const {
 
 // Crear nuevo camión
 
+router.get("/camion/crear", renderCamionForm);
 router.post("/camion/nuevo-camion", crearNuevoCamion);
 
 // Listar todos los camiones
@@ -22,7 +25,7 @@ router.get("/camion", listarCamiones);
 router.get("/camion/obtener-camion/:codigo_camion", obtenerCamion);
 
 // Edit Notes
-
+/*router.get("/camion/editar/:codigo_camion", renderActualizarCamionForm);*/
 router.put("/camion/editar-camion/:codigo_camion", actualizarCamion);
 
 // Delete Notes

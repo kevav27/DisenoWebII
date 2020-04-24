@@ -14,22 +14,17 @@
             <div class="au-card-inner">
                 <h3 class="title-2">Registro</h3>
                 <div class="signup-form">
-                    <form class="register-form" id="register-form">
+                    <form action="/camion/nuevo-camion" method="POST" class="register-form" id="register-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-input">
-                                    <label for="camionCode" class="required">Código de
-                                        Camión</label>
-                                    <input type="text" name="camionCode" id="camionCode" />
+                                    <label for="descripcion" class="required">Descripción</label>
+                                    <input type="text" name="descripcion" id="camionName" />
                                 </div>
                                 <div class="form-input">
-                                    <label for="camionName" class="required">Descripción</label>
-                                    <input type="text" name="camionName" id="camionName" />
-                                </div>
-                                <div class="form-input">
-                                    <label for="camionShortName" class="required">Nombre
-                                        Corto</label>
-                                    <input type="text" name="camionShortName" id="camionShortName" />
+                                    <label for="nombreCorto" class="required">Nombre
+                                        Corto Ej: Camión 4x4 -> Cam4x4</label>
+                                    <input type="text" name="nombreCorto" id="camionShortName" />
                                 </div>
                             </div>
                             <div class="form-group">

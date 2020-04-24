@@ -4,6 +4,10 @@ const camionCtrl = {};
 const Camion = require("../models/camion.model");
 
 
+camionCtrl.renderCamionForm = (req, res) => {
+  res.render('camion-new');
+}
+
 camionCtrl.crearNuevoCamion = async (req, res) => {
   const nuevoCamion = new Camion({
     nombreCorto: req.body.nombreCorto,
