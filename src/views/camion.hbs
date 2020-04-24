@@ -110,31 +110,20 @@
                 <tbody>
                     {{#each camiones}}
                     <tr class="tr-shadow">
-
-                        <!-- <td>FC</td>
-                        <td>Camión 4X4</td>
-                        <td class="desc">Cam4X</td>
-                        <td>Toyota</td>
-                        <td>2019</td>
-                        <td>C12345</td>
-                        <td>-->
-
-                        <td>{{ this.codigo_camion}}</td>
-
+                        <td>{{this.codigo_camion}}</td>
+                        <td>{{this.descripcion}}</td>
+                        <td>{{this.nombreCorto}}</td>
+                        <td>{{this.marca}}</td>
+                        <td>{{this.year}}</td>
+                        <td>{{this.placa}}</td>
                         <td>
                             <div class="table-data-feature">
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                    <i class="zmdi zmdi-plus"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                <a href="/camion/editar-camion/{{codigo_camion}}" class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                     <i class="zmdi zmdi-edit"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                </a>
+                                <a href="/camion/eliminar-camion/{{codigo_camion}}" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                     <i class="zmdi zmdi-delete"></i>
-                                </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                    <i class="zmdi zmdi-more"></i>
-                                </button>
+                                </a>
                             </div>
                         </td>
                     </tr>

@@ -23,7 +23,7 @@ camionCtrl.crearNuevoCamion = async (req, res) => {
   });
   await nuevoCamion.save()
     .then(nuevoCamion => {
-      this.renderCamionForm;
+      this.listarCamiones;
       //res.json(nuevoCamion);
     }).catch(err => {
       res.status(500).send({
@@ -34,15 +34,7 @@ camionCtrl.crearNuevoCamion = async (req, res) => {
 
 camionCtrl.listarCamiones = async (req, res) => {
   const camiones = await Camion.find()
-  res.render('pruebas', { camiones })
-    /*.then(camiones => {
-      
-      res.json(camiones);
-    }).catch(err => {
-      res.status(500).send({
-        message: err.message || "Error al recuperar los camiones de la base de datos"
-      });
-    });*/
+  res.render('camion', { camiones });
 };
 
 
