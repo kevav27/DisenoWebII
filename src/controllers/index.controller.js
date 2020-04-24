@@ -89,6 +89,9 @@ indexCtrl.renderUsuarios = (req,res) => {
     res.render('usuarios')
 } 
 
+indexCtrl.renderLogin = (req,res) =>{
+    res.render('login')
+}
 
 
 
