@@ -1,0 +1,170 @@
+<div class="row">
+    <div class="col-md-10">
+        <div class="overview-wrap">
+            <h2 class="title-1">Productos</h2>
+            <button class="au-btn au-btn-icon au-btn--blue">
+                <i class="zmdi zmdi-plus"></i>Agregar</button>
+        </div>
+    </div>
+</div>
+
+<div class="row m-t-25"></div>
+<div class="row">
+    <div class="col-lg-20" style="width: 780px;">
+        <div class="au-card recent-report">
+            <div class="au-card-inner">
+                <h3 class="title-2">Registro</h3>
+                <div class="signup-form">
+                    <form class="register-form" id="register-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="productosCode" class="required">Código de
+                                        Producto</label>
+                                    <input type="text" name="productosCode" id="productosCode" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="productosName" class="required">Descripción</label>
+                                    <input type="text" name="productosName" id="productosName" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="productosShortName" class="required">Nombre
+                                        Corto</label>
+                                    <input type="text" name="productosShortName" id="productosShortName" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="productosReorden" class="required">Punto de
+                                        Re-Orden</label>
+                                    <input type="text" name="productosReorden" id="productosReorden" />
+                                </div>
+                                <div class="select-list">
+                                    <label for="productos_Medida" class="required">Unidad de
+                                        Medida</label>
+                                    <select name="productos_Medida" id="productos_Medida" class="form-control">
+                                        <option value="0">Seleccione una Opción</option>
+                                        <option value="1">Metros</option>
+                                        <option value="2">Metros Cúbicos</option>
+                                        <option value="3">Metros Cuadrados</option>
+                                        <option value="4">Litros</option>
+                                        <option value="3">Mililitros</option>
+                                    </select>
+                                </div>
+                                <div class="form-input">
+                                    <label for="productosCode" class="required">Código de Tipo
+                                        Materia Prima?</label>
+                                    <input type="text" name="productosCode" id="productosCode" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="productos_MateriaPrimaCode" class="required">Código de Materia
+                                        Prima</label>
+                                    <input type="text" name="productos_MateriaPrimaCode"
+                                        id="productos_MateriaPrimaCode" />
+                                </div>
+
+                            </div>
+                        </div>
+                </div>
+
+                <div class="form-submit">
+                    <input type="submit" value="Submit" class="submit" id="submit" name="submit" />
+                    <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row m-t-25"></div>
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- DATA TABLE -->
+        <h3 class="title-5 m-b-35">Listado</h3>
+        <div class="table-data__tool">
+            <div class="table-data__tool-left">
+                <div class="rs-select2--light rs-select2--md">
+                    <select class="js-select2" name="property">
+                        <option selected="selected">Propiedades</option>
+                        <option value="">Código</option>
+                        <option value="">Nombre Corto</option>
+                    </select>
+                    <div class="dropDownSelect2"></div>
+                </div>
+
+                <button class="au-btn-filter">
+                    <i class="zmdi zmdi-filter-list"></i>Filtrar</button>
+            </div>
+            <div class="table-data__tool-right">
+
+                <div class="rs-select2--light">
+                    <form class="form-header" action="" method="">
+                        <input class="au-input " type="text" name="search" placeholder="Buscar" />
+                        <button class="au-btn--submit" type="submit">
+                            <i class="zmdi zmdi-search"></i>
+                        </button>
+                    </form>
+                </div>
+                <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                    <i class="zmdi zmdi-plus"></i>Agregar</button>
+
+
+
+            </div>
+        </div>
+        <div class="table-responsive table-responsive-data3">
+            <table class="table table-data2">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Descripción</th>
+                        <th>Nombre Corto</th>
+                        <th>Punto Re-Orden</th>
+                        <th>Unidad de Medida</th>
+                        <th>Código TMP</th>
+                        <th>Código Materia Prima</th>
+
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="tr-shadow">
+
+                        <td>PR</td>
+                        <td>Shampoo Alfa Park</td>
+                        <td class="desc">ShaAl</td>
+                        <td>..</td>
+                        <td>Mililitros</td>
+                        <td>TMP0190</td>
+                        <td>MP908</td>
+
+
+                        <td>
+                            <div class="table-data-feature">
+                                <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                    <i class="zmdi zmdi-plus"></i>
+                                </button>
+                                <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                    <i class="zmdi zmdi-edit"></i>
+                                </button>
+                                <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                    <i class="zmdi zmdi-delete"></i>
+                                </button>
+                                <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                    <i class="zmdi zmdi-more"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="spacer"></tr>
+
+
+
+                </tbody>
+            </table>
+        </div>
+        <!-- END DATA TABLE -->
+    </div>
+</div>

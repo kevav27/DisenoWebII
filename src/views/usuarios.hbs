@@ -1,0 +1,186 @@
+<div class="row">
+    <div class="col-md-10">
+        <div class="overview-wrap">
+            <h2 class="title-1">Mantenimiento de Usuarios</h2>
+            <button class="au-btn au-btn-icon au-btn--blue">
+                <i class="zmdi zmdi-plus"></i>Agregar
+            </button>
+        </div>
+    </div>
+</div>
+<div class="row m-t-25"></div>
+
+<div class="row">
+
+    <div class="col-lg-20" style="width: 780px;">
+        <div class="au-card recent-report">
+            <div class="au-card-inner">
+                <h3 class="title-2">Registro</h3>
+                <div class="signup-form">
+                    <form class="register-form" id="register-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="usuarioCodeEvent" class="required">Código
+                                        Evento</label>
+                                    <input type="text" name="usuarioCodeEvent" id="usuarioCodeEvent" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="usuarioCompleteName" class="required">Nombre
+                                        Completo</label>
+                                    <input type="text" name="usuarioCompleteName" id="usuarioCompleteName" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="usuarioName" class="required">Nombre de
+                                        Usuario</label>
+                                    <input type="text" name="usuarioName" id="usuarioName" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="usuarioEventShortName" class="required">Nombre
+                                        Corto de Evento</label>
+                                    <input type="text" name="usuarioEventShortName" id="usuarioEventShortName" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="usuarioEmail" class="required">Correo
+                                        Electrónico</label>
+                                    <input type="email" name="usuarioEmail" id="usuarioEmail" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="usuarioPassword" class="required">Contraseña</label>
+                                    <input type="email" name="usuarioPassword" id="usuarioPassword" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="select-list">
+                                    <label for="usuarioRol" class="required">Rol</label>
+                                    <select name="usuarioRol" id="usuarioRol" class="form-control">
+                                        <option value="0">Seleccione una Opción</option>
+                                        <option value="1"></option>
+                                        <option value="2"></option>
+                                        <option value="3"></option>
+                                        <option value="4"></option>
+                                        <option value="3"></option>
+                                    </select>
+                                </div>
+                                <div class="select-list">
+                                    <label for="usuarioEstado" class="required">Estado</label>
+                                    <select name="usuarioEstado" id="usuarioEstado" class="form-control">
+                                        <option value="0">Seleccione una Opción</option>
+                                        <option value="1">Activo</option>
+                                        <option value="2">Desactivado</option>
+
+                                    </select>
+                                </div>
+                                <div class="select-list">
+                                    <label for="usuarioTipo" class="required">Tipo de
+                                        Usuario</label>
+                                    <select name="usuarioTipo" id="usuarioTipo" class="form-control">
+                                        <option value="0">Seleccione una Opción</option>
+                                        <option value="1">Usuario Administrador de Seguridad
+                                        </option>
+                                        <option value="2">Usuario Administrador del Sistema
+                                        </option>
+
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                </div>
+                <div class="form-submit">
+                    <input type="submit" value="Submit" class="submit" id="submit" name="submit" />
+                    <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row m-t-25"></div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- DATA TABLE -->
+            <h3 class="title-5 m-b-35">Usuarios</h3>
+            <div class="table-data__tool">
+                <div class="table-data__tool-left">
+                    <div class="rs-select2--light rs-select2--md">
+                        <select class="js-select2" name="property">
+                            <option selected="selected">Propiedades</option>
+                            <option value="">Código</option>
+                            <option value="">Descripción</option>
+                        </select>
+                        <div class="dropDownSelect2"></div>
+                    </div>
+
+                    <button class="au-btn-filter">
+                        <i class="zmdi zmdi-filter-list"></i>Filtrar</button>
+                </div>
+                <div class="table-data__tool-right">
+
+                    <div class="rs-select2--light">
+                        <form class="form-header" action="" method="">
+                            <input class="au-input " type="text" name="search" placeholder="Buscar" />
+                            <button class="au-btn--submit" type="submit">
+                                <i class="zmdi zmdi-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <button class="au-btn au-btn-icon au-btn--green au-btn--small add-new">
+                        <i class="zmdi zmdi-plus"></i>Agregar</button>
+                </div>
+            </div>
+            <div class="table-responsive table-responsive-data3">
+                <table class="table table-data2">
+                    <thead>
+                        <tr>
+                            <th>Código Evento</th>
+                            <th>Nombre</th>
+                            <th>Usuario</th>
+                            <th>Nombre Corto Evento</th>
+                            <th>Correo Electrónico</th>
+                            <th>Contraseña</th>
+                            <th>Rol</th>
+                            <th>Estado</th>
+                            <th>Tipo de Usuario</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="tr-shadow">
+
+                            <td>EV213</td>
+                            <td>Lorem</td>
+                            <td>Lorem123</td>
+                            <td class="desc">CreUs</td>
+                            <td>lorem123@email.com</td>
+                            <td>Lorem123()</td>
+                            <td>Mantenimiento de Usuarios</td>
+                            <td>Activo</td>
+                            <td>Usuario Administrador de Seguridad</td>
+                            <td>
+                                <div class="table-data-feature">
+                                    <button class="item add" data-toggle="tooltip" data-placement="top" title="Agregar">
+                                        <i class="zmdi zmdi-plus"></i>
+                                    </button>
+                                    <button class="item edit" data-toggle="tooltip" data-placement="top" title="Editar">
+                                        <i class="zmdi zmdi-edit"></i>
+                                    </button>
+                                    <button class="item delete" data-toggle="tooltip" data-placement="top">
+                                        <i class="zmdi zmdi-delete"></i>
+                                    </button>
+                                    <button class="item " data-toggle="tooltip" data-placement="top">
+                                        <i class="zmdi zmdi-more"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="spacer"></tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- END DATA TABLE -->
+
+        </div>
+    </div>
+
+</div>

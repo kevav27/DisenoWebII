@@ -1,0 +1,179 @@
+<div class="row">
+    <div class="col-md-10">
+        <div class="overview-wrap">
+            <h2 class="title-1">Crear Pedido</h2>
+            <button class="au-btn au-btn-icon au-btn--blue">
+                <i class="zmdi zmdi-plus"></i>Agregar</button>
+        </div>
+    </div>
+</div>
+<div class="row m-t-25"></div>
+<div class="row">
+    <div class="col-lg-20" style="width: 780px;">
+        <div class="au-card recent-report">
+            <div class="au-card-inner">
+                <h3 class="title-2">Registro</h3>
+                <div class="signup-form">
+                    <form class="register-form" id="register-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="pedido_NumeroFactura" class="required">Número de Factura</label>
+                                    <input type="text" name="pedido_NumeroFactura" id="pedido_NumeroFactura" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="pedido_Date" class="required">Fecha de la Orden</label>
+                                    <input type="date" name="pedido_Date" id="pedido_Date" />
+                                </div>
+                                <div class="select-list">
+                                    <label for="pedido_Proveedor" class="required">Proveedor</label>
+                                    <select name="pedido_Proveedor" id="pedido_Proveedor" class="form-control">
+                                        <option value="0">Seleccione una Opción</option>
+                                        <option value="1"></option>
+                                        <option value="2"></option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="form-submit">
+                    <input type="submit" value="Submit" class="submit" id="submit" name="submit" />
+                    <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-lg-20" style="width: 780px;">
+        <div class="au-card recent-report">
+            <div class="au-card-inner">
+                <h3 class="title-2">Registro (Detalle)</h3>
+                <div class="signup-form">
+                    <form class="register-form" id="register-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="pedido_Code" class="required">Código Orden de Pedido</label>
+                                    <input type="text" name="pedido_Code" id="pedido_Code" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="pedidoMateriaPrima_Code" class="required">Código Materia Prima</label>
+                                    <input type="text" name="pedidoMateriaPrima_Code" id="pedidoMateriaPrima_Code" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="pedidoMateriaPrima_Name" class="required">Nombre Materia Prima</label>
+                                    <input type="text" name="pedidoMateriaPrima_Name" id="pedidoMateriaPrima_Name" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="pedido_Cantitad" class="required">Cantidad a Pedir</label>
+                                    <input type="number" name="pedido_Cantitad" id="pedido_Cantitad" />
+                                </div>
+                                <div class="select-list">
+                                    <label for="pedido_Estado" class="required">Estado</label>
+                                    <select name="pedido_Estado" id="pedido_Estado" class="form-control">
+                                        <option value="0">Seleccione una Opción</option>
+                                        <option value="1">Pendiente</option>
+                                        <option value="2">Entregado</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                        </div>
+                </div>
+
+                <div class="form-submit">
+                    <input type="submit" value="Submit" class="submit" id="submit" name="submit" />
+                    <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <!-- DATA TABLE -->
+        <h3 class="title-5 m-b-35">Pedidos</h3>
+        <div class="table-data__tool">
+            <div class="table-data__tool-left">
+                <div class="rs-select2--light rs-select2--md">
+                    <select class="js-select2" name="property">
+                        <option selected="selected">Propiedades</option>
+                        <option value="">Código</option>
+                        <option value="">Nombre Corto</option>
+                    </select>
+                    <div class="dropDownSelect2"></div>
+                </div>
+
+                <button class="au-btn-filter">
+                    <i class="zmdi zmdi-filter-list"></i>Filtrar</button>
+            </div>
+            <div class="table-data__tool-right">
+
+                <div class="rs-select2--light">
+                    <form class="form-header" action="" method="">
+                        <input class="au-input " type="text" name="search" placeholder="Buscar" />
+                        <button class="au-btn--submit" type="submit">
+                            <i class="zmdi zmdi-search"></i>
+                        </button>
+                    </form>
+                </div>
+                <button class="au-btn au-btn-icon au-btn--green au-btn--small">
+                    <i class="zmdi zmdi-plus"></i>Agregar</button>
+
+
+
+            </div>
+        </div>
+        <div class="table-responsive table-responsive-data3">
+            <table class="table table-data2">
+                <thead>
+                    <tr>
+                        <th>Número de Factura</th>
+                        <th>Fecha de la Orden</th>
+                        <th>Proveedor</th>
+                        <th>Comprobante</th>
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="tr-shadow">
+
+                        <td>OP1903</td>
+                        <td>11-03-2020</td>
+                        <td class="desc">Ferretería San Bosco</td>
+                        <td>
+                            <span class="status--pending">Pendiente</span>
+                        </td>
+
+                        <td>
+                            <div class="table-data-feature">
+                                <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
+                                    <i class="zmdi zmdi-plus"></i>
+                                </button>
+                                <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
+                                    <i class="zmdi zmdi-edit"></i>
+                                </button>
+                                <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                                    <i class="zmdi zmdi-delete"></i>
+                                </button>
+                                <button class="item" data-toggle="tooltip" data-placement="top" title="More">
+                                    <i class="zmdi zmdi-more"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="spacer"></tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- END DATA TABLE -->
+    </div>
+</div>

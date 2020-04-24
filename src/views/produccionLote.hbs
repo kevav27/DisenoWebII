@@ -1,0 +1,118 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="overview-wrap">
+                <h2 class="title-1">Producción de Productos</h2>
+
+            </div>
+        </div>
+    </div>
+    <div class="row m-t-25"></div>
+    <div class="row">
+        <div class="col-lg-20" style="width: 780px;">
+            <div class="au-card recent-report">
+                <div class="au-card-inner">
+                    <h3 class="title-2">Registro</h3>
+                    <div class="signup-form">
+                        <form class="register-form" id="register-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <div class="form-input">
+                                        <label for="produccion_Number" class="required">Número de
+                                            Producción</label>
+                                        <input type="text" name="produccion_Number" id="produccion_Number" />
+                                    </div>
+                                    <div class="form-input">
+                                        <label for="produccion_Date" class="required">Fecha de la
+                                            Producción</label>
+                                        <input type="date" name="produccion_Date" id="produccion_Date" />
+                                    </div>
+                                    <div class="form-input">
+                                        <label for="produccion_Code" class="required">Código de
+                                            Producto</label>
+                                        <input type="text" name="produccion_Code" id="produccion_Code" />
+                                    </div>
+                                    <div class="form-input">
+                                        <label for="producto_Name" class="required">Nombre de
+                                            Producto</label>
+                                        <input type="text" name="producto_Name" id="producto_Name" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+
+                                    <div class="select-list">
+                                        <label for="pedido_Proveedor" class="required">Bodega a
+                                            Almacenar</label>
+                                        <select name="pedido_Proveedor" id="pedido_Proveedor" class="form-control">
+                                            <option value="0">Seleccione una Opción</option>
+                                            <option value="1"></option>
+                                            <option value="2"></option>
+                                        </select>
+                                    </div>
+                                    <div class="form-input">
+                                        <label for="produccion_Number" class="required">Cantidad por
+                                            Producir</label>
+                                        <input type="number" name="produccion_Number" id="produccion_Number" />
+                                    </div>
+                                    <div class="form-input">
+                                        <label for="produccion_Tiempo" class="required">Tiempo
+                                            Estimado de Producción</label>
+                                        <input step="1" type="time" name="produccion_Tiempo" id="produccion_Tiempo" />
+                                    </div>
+
+                                </div>
+                            </div>
+                    </div>
+
+                    <div class="form-submit">
+                        <input type="submit" value="Producir" class="submit" id="submit" name="submit" />
+                        <input type="submit" value="Cancelar" class="submit" id="reset" name="reset" />
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+        <div class="row m-t-25"></div>
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <!-- DATA TABLE -->
+
+            <h3 class="title-5 m-b-35">Pedidos</h3>
+
+            <div class="table-responsive table--no-card m-b-30">
+                <table class="table table-borderless table-striped table-earning">
+                    <thead>
+                        <tr>
+                            <th>Número Producción</th>
+                            <th>Producto</th>
+                            <th>Bodega</th>
+                            <th>Cantidad</th>
+                            <th>Progreso de Producción</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>NP03</td>
+                            <td>Shampoo Alfa Park</td>
+                            <td>Bodega Quimícos</td>
+                            <td>2300</td>
+                            <td>
+                                <div class="progress mb-2">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 75%"
+                                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>

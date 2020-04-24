@@ -93,7 +93,7 @@
                                 </li>
                             </ul>
                         </li>
-                        
+
                         <li class=" has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-refresh"></i>Procesos</a>
@@ -136,7 +136,7 @@
                             </ul>
                         </li>
 
-                        
+
                     </ul>
                 </div>
             </nav>
@@ -195,7 +195,7 @@
                                 </li>
                             </ul>
                         </li>
-                        
+
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-refresh"></i>Procesos
@@ -228,15 +228,15 @@
                                 </li>
                                 <lia>
                                     <a href="roles.html">Roles</a>
-                                </li>
-                                <li>
-                                    <a href="usuarios.html">Usuarios</a>
-                                </li>
-                                <li>
-                                    <a href="bitacorasRegistro.html">Bitacoras</a>
-                                </li>
-                            </ul>
                         </li>
+                        <li>
+                            <a href="usuarios.html">Usuarios</a>
+                        </li>
+                        <li>
+                            <a href="bitacorasRegistro.html">Bitacoras</a>
+                        </li>
+                    </ul>
+                    </li>
                     </ul>
                 </nav>
             </div>
@@ -378,8 +378,7 @@
                                                         <div class="form-input">
                                                             <label for="rolShortName" class="required">Nombre
                                                                 Corto</label>
-                                                            <input type="text" name="rolShortName"
-                                                                id="rolShortName" />
+                                                            <input type="text" name="rolShortName" id="rolShortName" />
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
@@ -411,130 +410,133 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                    </div>
-                                    <div class="form-submit">
-                                        <input type="submit" value="Submit" class="submit" id="submit" name="submit" />
-                                        <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
-                                    </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row m-t-25"></div>
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <!-- DATA TABLE -->
-                            <h3 class="title-5 m-b-35">Roles</h3>
-                            <div class="table-data__tool">
-                                <div class="table-data__tool-left">
-                                    <div class="rs-select2--light rs-select2--md">
-                                        <select class="js-select2" name="property">
-                                            <option selected="selected">Propiedades</option>
-                                            <option value="">Código</option>
-                                            <option value="">Descripción</option>
-                                        </select>
-                                        <div class="dropDownSelect2"></div>
-                                    </div>
-
-                                    <button class="au-btn-filter">
-                                        <i class="zmdi zmdi-filter-list"></i>Filtrar</button>
-                                </div>
-                                <div class="table-data__tool-right">
-
-                                    <div class="rs-select2--light">
-                                        <form class="form-header" action="" method="">
-                                            <input class="au-input " type="text" name="search" placeholder="Buscar" />
-                                            <button class="au-btn--submit" type="submit">
-                                                <i class="zmdi zmdi-search"></i>
-                                            </button>
+                                        </div>
+                                        <div class="form-submit">
+                                            <input type="submit" value="Submit" class="submit" id="submit"
+                                                name="submit" />
+                                            <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
+                                        </div>
                                         </form>
                                     </div>
-                                    <button class="au-btn au-btn-icon au-btn--green au-btn--small add-new">
-                                        <i class="zmdi zmdi-plus"></i>Agregar</button>
                                 </div>
                             </div>
-                            <div class="table-responsive table-responsive-data3">
-                                <table class="table table-data2">
-                                    <thead>
-                                        <tr>
-                                            <th>Código</th>
-                                            <th>Nombre de Rol</th>
-                                            <th>Nombre Corto</th>
-                                            <th>Eventos Disponibles</th>
-                                            <th>Eventos Asignados</th>
-                                            <th></th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr class="tr-shadow">
-
-                                            <td>RL213</td>
-                                            <td>Mantenimientos Usuario</td>
-                                            <td class="desc">ManUs</td>
-                                            <td></td>
-                                            <td></td>
-
-
-                                            <td>
-                                                <div class="table-data-feature">
-                                                    <button class="item add" data-toggle="tooltip" data-placement="top"
-                                                        title="Agregar">
-                                                        <i class="zmdi zmdi-plus"></i>
-                                                    </button>
-                                                    <button class="item edit" data-toggle="tooltip" data-placement="top"
-                                                        title="Editar">
-                                                        <i class="zmdi zmdi-edit"></i>
-                                                    </button>
-                                                    <button class="item delete" data-toggle="tooltip"
-                                                        data-placement="top">
-                                                        <i class="zmdi zmdi-delete"></i>
-                                                    </button>
-                                                    <button class="item " data-toggle="tooltip" data-placement="top">
-                                                        <i class="zmdi zmdi-more"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr class="spacer"></tr>
-
-
-
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- END DATA TABLE -->
-
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="copyright">
-                                <p>Proyecto Diseño Web II.</p>
+                        <div class="row m-t-25"></div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <!-- DATA TABLE -->
+                                <h3 class="title-5 m-b-35">Roles</h3>
+                                <div class="table-data__tool">
+                                    <div class="table-data__tool-left">
+                                        <div class="rs-select2--light rs-select2--md">
+                                            <select class="js-select2" name="property">
+                                                <option selected="selected">Propiedades</option>
+                                                <option value="">Código</option>
+                                                <option value="">Descripción</option>
+                                            </select>
+                                            <div class="dropDownSelect2"></div>
+                                        </div>
+
+                                        <button class="au-btn-filter">
+                                            <i class="zmdi zmdi-filter-list"></i>Filtrar</button>
+                                    </div>
+                                    <div class="table-data__tool-right">
+
+                                        <div class="rs-select2--light">
+                                            <form class="form-header" action="" method="">
+                                                <input class="au-input " type="text" name="search"
+                                                    placeholder="Buscar" />
+                                                <button class="au-btn--submit" type="submit">
+                                                    <i class="zmdi zmdi-search"></i>
+                                                </button>
+                                            </form>
+                                        </div>
+                                        <button class="au-btn au-btn-icon au-btn--green au-btn--small add-new">
+                                            <i class="zmdi zmdi-plus"></i>Agregar</button>
+                                    </div>
+                                </div>
+                                <div class="table-responsive table-responsive-data3">
+                                    <table class="table table-data2">
+                                        <thead>
+                                            <tr>
+                                                <th>Código</th>
+                                                <th>Nombre de Rol</th>
+                                                <th>Nombre Corto</th>
+                                                <th>Eventos Disponibles</th>
+                                                <th>Eventos Asignados</th>
+                                                <th></th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="tr-shadow">
+
+                                                <td>RL213</td>
+                                                <td>Mantenimientos Usuario</td>
+                                                <td class="desc">ManUs</td>
+                                                <td></td>
+                                                <td></td>
+
+
+                                                <td>
+                                                    <div class="table-data-feature">
+                                                        <button class="item add" data-toggle="tooltip"
+                                                            data-placement="top" title="Agregar">
+                                                            <i class="zmdi zmdi-plus"></i>
+                                                        </button>
+                                                        <button class="item edit" data-toggle="tooltip"
+                                                            data-placement="top" title="Editar">
+                                                            <i class="zmdi zmdi-edit"></i>
+                                                        </button>
+                                                        <button class="item delete" data-toggle="tooltip"
+                                                            data-placement="top">
+                                                            <i class="zmdi zmdi-delete"></i>
+                                                        </button>
+                                                        <button class="item " data-toggle="tooltip"
+                                                            data-placement="top">
+                                                            <i class="zmdi zmdi-more"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr class="spacer"></tr>
+
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- END DATA TABLE -->
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>Proyecto Diseño Web II.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- END MAIN CONTENT-->
+                <!-- END PAGE CONTAINER-->
             </div>
-            <!-- END MAIN CONTENT-->
-            <!-- END PAGE CONTAINER-->
+
         </div>
 
-    </div>
+        <!-- Jquery JS-->
+        <script src="vendor/jquery-3.2.1.min.js"></script>
+        <!-- Bootstrap JS-->
+        <script src="vendor/bootstrap-4.1/popper.min.js"></script>
+        <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
+        <!-- Vendor JS       -->
+        <script src="vendor/animsition/animsition.min.js"></script>
+        <script src="vendor/select2/select2.min.js"></script>
 
-    <!-- Jquery JS-->
-    <script src="vendor/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap JS-->
-    <script src="vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="vendor/bootstrap-4.1/bootstrap.min.js"></script>
-    <!-- Vendor JS       -->
-    <script src="vendor/animsition/animsition.min.js"></script>
-    <script src="vendor/select2/select2.min.js"></script>
-
-    <!-- Main JS-->
-    <script src="js/main.js"></script>
+        <!-- Main JS-->
+        <script src="js/main.js"></script>
 
 </body>
 

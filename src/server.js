@@ -1,5 +1,7 @@
 const express = require('express');
+const exphbs = require('express-handlebars');
 const path = require('path');
+
 const methodOverride = require('method-override');
 const bodyParser = require('body-parser');
 
@@ -8,6 +10,15 @@ const app = express();
 
 // settings
 app.set('port', process.env.PORT || 5000);
+app.set('views', path.join(__dirname, 'views'));
+app.engine('.hbs', exphbs({
+  defaultLayout:'main',
+  layoutsDir: path.join(app.get('views'), 'layouts'),
+  partialsDir: path.join(app.get('views'), 'partials'),
+  extname: '.hbs'
+}));
+
+app.set('view engine', '.hbs');
 
 // middlewares
 app.use(express.urlencoded({extended: false}));
@@ -17,6 +28,8 @@ app.use(bodyParser.json());
 // Global Variables
 
 // routes
+app.use(require('./routes/index.routes'));
+
 app.use(require('./routes/camion.routes'));
 app.use(require('./routes/bodega.routes'));
 app.use(require('./routes/bitacora.routes'));
@@ -31,6 +44,8 @@ app.use(require('./routes/tipoMateriaPrima.routes'));
 app.use(require('./routes/usuario.routes'));
 
 // static files
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(express.static(path.join(__dirname, '/views/tramsa')));
 
 app.get('/', (req, res) => {

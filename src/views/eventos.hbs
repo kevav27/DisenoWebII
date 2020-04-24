@@ -1,0 +1,169 @@
+<div class="row">
+    <div class="col-md-10">
+        <div class="overview-wrap">
+            <h2 class="title-1">Mantenimiento de Eventos</h2>
+            <button class="au-btn au-btn-icon au-btn--blue">
+                <i class="zmdi zmdi-plus"></i>Agregar
+            </button>
+        </div>
+    </div>
+</div>
+<div class="row m-t-25"></div>
+
+<div class="row">
+
+    <div class="col-lg-20" style="width: 780px;">
+        <div class="au-card recent-report">
+            <div class="au-card-inner">
+                <h3 class="title-2">Registro</h3>
+                <div class="signup-form">
+                    <form class="register-form" id="register-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="eventoName" class="required">Nombre del Evento</label>
+                                    <input type="text" name="eventoName" id="eventoName" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="eventoCode" class="required">Código del Evento</label>
+                                    <input type="text" name="eventoCode" id="eventoCode" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="eventoShortName" class="required">Nombre Corto</label>
+                                    <input type="text" name="eventoShortName" id="eventoShortName" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="eventoDescripcion" class="required">Descripción</label>
+                                    <textarea type="text" name="eventoDescripcion" id="eventoDescripcion"
+                                        rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="form-submit">
+                    <input type="submit" value="Submit" class="submit" id="submit" name="submit" />
+                    <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row m-t-25"></div>
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- DATA TABLE -->
+        <h3 class="title-5 m-b-35">Eventos</h3>
+        <div class="table-data__tool">
+            <div class="table-data__tool-left">
+                <div class="rs-select2--light rs-select2--md">
+                    <select class="js-select2" name="property">
+                        <option selected="selected">Propiedades</option>
+                        <option value="">Código</option>
+                        <option value="">Descripción</option>
+                    </select>
+                    <div class="dropDownSelect2"></div>
+                </div>
+
+                <button class="au-btn-filter">
+                    <i class="zmdi zmdi-filter-list"></i>Filtrar</button>
+            </div>
+            <div class="table-data__tool-right">
+
+                <div class="rs-select2--light">
+                    <form class="form-header" action="" method="">
+                        <input class="au-input " type="text" name="search" placeholder="Buscar" />
+                        <button class="au-btn--submit" type="submit">
+                            <i class="zmdi zmdi-search"></i>
+                        </button>
+                    </form>
+                </div>
+                <button class="au-btn au-btn-icon au-btn--green au-btn--small add-new">
+                    <i class="zmdi zmdi-plus"></i>Agregar</button>
+            </div>
+        </div>
+        <div class="table-responsive table-responsive-data3">
+            <table class="table table-data2">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Nombre Corto</th>
+                        <th>Descripción</th>
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="tr-shadow">
+
+                        <td>Crear Usuario</td>
+                        <td class="desc">CreUs</td>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit.</td>
+
+                        <td>
+                            <div class="table-data-feature">
+                                <button class="item add" data-toggle="tooltip" data-placement="top" title="Agregar">
+                                    <i class="zmdi zmdi-plus"></i>
+                                </button>
+                                <button class="item edit" data-toggle="tooltip" data-placement="top" title="Editar">
+                                    <i class="zmdi zmdi-edit"></i>
+                                </button>
+                                <button class="item delete" data-toggle="tooltip" data-placement="top">
+                                    <i class="zmdi zmdi-delete"></i>
+                                </button>
+                                <button class="item " data-toggle="tooltip" data-placement="top">
+                                    <i class="zmdi zmdi-more"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="spacer"></tr>
+
+
+
+                </tbody>
+            </table>
+        </div>
+        <!-- END DATA TABLE -->
+        <section class="activity activity2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="activity__item activity__item--green">
+                            <span class="desc">Modificar Socios</span>
+                            <div class="icon">
+                                <i class="zmdi zmdi-account-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="activity__item activity__item--orange">
+                            <span class="desc">Realizar Facturas</span>
+                            <div class="icon">
+                                <i class="zmdi zmdi-copy"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="activity__item activity__item--blue">
+                            <span class="desc">Eliminar Usuario</span>
+                            <div class="icon">
+                                <i class="zmdi zmdi-delete"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="activity__item activity__item--red">
+                            <span class="desc">Nuevo Rol</span>
+                            <div class="icon">
+                                <i class="zmdi zmdi-plus"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
