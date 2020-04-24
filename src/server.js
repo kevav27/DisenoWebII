@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 
 // routes
 app.use(require('./routes/camion.routes'));
-app.use(require('./routes/bodega.routes'));/*
+app.use(require('./routes/bodega.routes'));
 app.use(require('./routes/bitacora.routes'));
 app.use(require('./routes/cliente.routes'));
 app.use(require('./routes/eventos.routes'));
@@ -28,7 +28,7 @@ app.use(require('./routes/producto.routes'));
 app.use(require('./routes/proveedor.routes'));
 app.use(require('./routes/rol.routes'));
 app.use(require('./routes/tipoMateriaPrima.routes'));
-app.use(require('./routes/usuario.routes'));*/
+app.use(require('./routes/usuario.routes'));
 
 // static files
 app.use(express.static(path.join(__dirname, '/views/tramsa')));
