@@ -10,6 +10,10 @@ const ProductoSchema = new Schema(
       type: String,
       required: true
     },
+    nombreCorto:{
+      type:String,
+      required:true
+  },
     puntoReorden: {
       type: String,
       required: true
