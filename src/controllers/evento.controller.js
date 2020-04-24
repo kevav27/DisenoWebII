@@ -4,7 +4,7 @@ const eventoCtrl = {};
 const Evento = require("../models/eventos.model");
 
 
-eventoCtrl.crearNuevoRol = async (req, res) => {
+eventoCtrl.crearNuevoEvento = async (req, res) => {
   const code = Math.floor((Math.random()*10000000));
   const nuevoEvento = new Evento({
     codigo_evento: "EV"+code,
@@ -33,7 +33,7 @@ eventoCtrl.listarEvento= async (req, res) => {
 };
 
 
-eventoCtrl.obtenerRol = async (req, res) => {
+eventoCtrl.obtenerEvento = async (req, res) => {
  await Evento.find({codigo_evento:req.params.codigo_evento})
     .then(evento => {
       if (!evento) {
@@ -75,7 +75,7 @@ eventoCtrl.actualizarEvento = async (req, res) => {
     });
 };
 
-eventoCtrl.eliminarRol = async (req, res) => {
+eventoCtrl.eliminarEvento = async (req, res) => {
   await Evento.deleteOne({codigo_evento:req.params.codigo_evento})
     .then(evento => {
       if (!evento) {

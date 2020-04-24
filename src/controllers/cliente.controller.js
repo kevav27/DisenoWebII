@@ -59,7 +59,7 @@ clienteCtrl.obtenerCliente = async (req, res) => {
     });
 }
 
-clienteCtrl.actualizarBodega = async (req, res) => {
+clienteCtrl.actualizarCliente = async (req, res) => {
   await Cliente.findOneAndUpdate({codigo_cliente: req.params.codigo_cliente}, { $set: req.body }, { new: true})
     .then(cliente => {
       if (!cliente) {

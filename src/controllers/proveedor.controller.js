@@ -4,7 +4,7 @@ const proveedor = {};
 const Proveedor = require("../models/proveedor.model");
 
 
-proveedor.crearNuevoTipoMateriaPrima = async (req, res) => {
+proveedor.crearNuevoProveedor = async (req, res) => {
   const code = Math.floor((Math.random()*10000000));
   const nuevoProveedor = new Proveedor({
     codigo_proveedor: "PROV-"+code,
@@ -81,7 +81,7 @@ proveedor.actualizarProveedor = async (req, res) => {
     });
 };
 
-proveedor.eliminarTipoMateriaPrima = async (req, res) => {
+proveedor.eliminarProveedor = async (req, res) => {
   await Proveedor.deleteOne({codigo_proveedor:req.params.codigo_proveedor})
     .then(proveedor => {
       if (!proveedor) {

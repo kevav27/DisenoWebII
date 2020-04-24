@@ -3,7 +3,7 @@ const productoCtrl = {};
 // Models
 const Producto = require("../models/producto.model");
 
-productoCtrl.crearNuevaBodega = async (req, res) => {
+productoCtrl.crearNuevoProducto = async (req, res) => {
   const code = Math.floor((Math.random()*10000000));
   const nuevoProducto = new Producto({
     codigo_producto: "PRO-"+code,
@@ -22,7 +22,7 @@ productoCtrl.crearNuevaBodega = async (req, res) => {
     });
 };
 
-productoCtrl.listarProductos = async (req, res) => {
+productoCtrl.listarProducto = async (req, res) => {
   await Producto.find()
     .then(producto => {
       res.send(producto);

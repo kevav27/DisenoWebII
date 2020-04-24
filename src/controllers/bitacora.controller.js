@@ -4,7 +4,7 @@ const bitacoraCtrl = {};
 const Bitacora = require("../models/bitacora.model");
 
 
-bitacoraCtrl.crearNuevoRol = async (req, res) => {
+bitacoraCtrl.crearNuevaBitacora = async (req, res) => {
   const code = Math.floor((Math.random()*10000000));
   const nuevaBitacora = new Bitacora({
     usuario: req.params.usuario,

@@ -3,7 +3,7 @@ const materiaPrimaCtrl = {};
 // Models
 const MateriaPrima = require("../models/materiaPrima.model");
 
-materiaPrimaCtrl.crearNuevaMateria = async (req, res) => {
+materiaPrimaCtrl.crearNuevaMateriaPrima = async (req, res) => {
   //const espacio = Producto.find({nombreBodega:req.body.nombre}).countDocuments();
   const code = Math.floor((Math.random()*10000000));
   const nuevaMateriaPrima = new MateriaPrima({
