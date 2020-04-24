@@ -5,11 +5,15 @@ const Camion = require("../models/camion.model");
 
 
 camionCtrl.renderCamionForm = (req, res) => {
-  res.render('camion-new');
+  res.render('camion');
 }
 
 camionCtrl.crearNuevoCamion = async (req, res) => {
+    const code = Math.floor((Math.random()*10000000));
+    req.body.codigo_camion = "CAM-"+code;
+  //const code = Math.floor((Math.random()*10000000));
   const nuevoCamion = new Camion({
+    codigo_camion: req.body.codigo_camion,
     nombreCorto: req.body.nombreCorto,
     descripcion: req.body.descripcion,
     codigo_camion: req.body.codigo_camion,
@@ -19,7 +23,8 @@ camionCtrl.crearNuevoCamion = async (req, res) => {
   });
   await nuevoCamion.save()
     .then(nuevoCamion => {
-      res.json(nuevoCamion);
+      this.renderCamionForm;
+      //res.json(nuevoCamion);
     }).catch(err => {
       res.status(500).send({
         message: err.message || "Error al crear nuevo camión"
@@ -28,14 +33,16 @@ camionCtrl.crearNuevoCamion = async (req, res) => {
 };
 
 camionCtrl.listarCamiones = async (req, res) => {
-  await Camion.find()
-    .then(camiones => {
+  const camiones = await Camion.find()
+  res.render('pruebas', { camiones })
+    /*.then(camiones => {
+      
       res.json(camiones);
     }).catch(err => {
       res.status(500).send({
         message: err.message || "Error al recuperar los camiones de la base de datos"
       });
-    });
+    });*/
 };
 
 
