@@ -2,6 +2,10 @@ const { Schema, model } = require("mongoose");
 
 const EventoSchema = new Schema(
   {
+    nombre: {
+      type: String,
+      required: true
+    },
     codigo_evento: {
       type: String,
       required: true
