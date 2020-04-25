@@ -14,11 +14,11 @@ const {
 
 // Crear nuevo camión
 
-router.get("/camion", renderCamionForm);
+router.get("/camion/nuevo-camion", renderCamionForm);
 router.post("/camion/nuevo-camion", crearNuevoCamion);
 
 // Listar todos los camiones
-router.get("/camion/lista-camiones", listarCamiones);
+router.get("/camion/lista", listarCamiones);
 
 
 //Obtener un camión en específico

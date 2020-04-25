@@ -4,14 +4,15 @@ const camionCtrl = {};
 const Camion = require("../models/camion.model");
 
 
-camionCtrl.renderCamionForm = (req, res) => {
-  res.render('camion');
+camionCtrl.renderCamionForm = async (req, res) => {
+  const camiones = await Camion.find()
+  res.render('camion', { camiones })
 }
 
 camionCtrl.crearNuevoCamion = async (req, res) => {
+  try{
     const code = Math.floor((Math.random()*10000000));
     req.body.codigo_camion = "CAM-"+code;
-  //const code = Math.floor((Math.random()*10000000));
   const nuevoCamion = new Camion({
     codigo_camion: req.body.codigo_camion,
     nombreCorto: req.body.nombreCorto,
@@ -22,14 +23,10 @@ camionCtrl.crearNuevoCamion = async (req, res) => {
     placa: req.body.placa
   });
   await nuevoCamion.save()
-    .then(nuevoCamion => {
-      this.listarCamiones;
-      //res.json(nuevoCamion);
-    }).catch(err => {
-      res.status(500).send({
-        message: err.message || "Error al crear nuevo camión"
-      });
-    });
+}catch(err){
+    
+}
+res.redirect("camion");
 };
 
 camionCtrl.listarCamiones = async (req, res) => {
@@ -39,25 +36,14 @@ camionCtrl.listarCamiones = async (req, res) => {
 
 
 camionCtrl.obtenerCamion = async (req, res) => {
- await Camion.find({codigo_camion:req.params.codigo_camion})
-    .then(camion => {
-      if (!camion) {
-        return res.status(404).send({
-          message: "El camion con el código: " + req.params.codigo_camion + " no existe"
-        });
-      }
-      res.send(camion);
-    }).catch(err => {
-      if (err.kind === 'ObjectId') {
-        return res.status(404).send({
-          message: "No se encontró ningún camión con el código: " + req.params.codigo_camion
-        });
-      }
-      return res.status(500).send({
-        message: "Error al recuperar camión código: " + req.params.codigo_camion
-      });
-    });
+  try{
+    await Camion.find({codigo_camion:req.params.codigo_camion})
+  }
+catch(err){
+
 }
+}
+
 
 camionCtrl.actualizarCamion = async (req, res) => {
   await Camion.updateOne({codigo_camion:req.params.codigo_camion},

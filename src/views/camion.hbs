@@ -1,3 +1,4 @@
+
 <div class="row">
     <div class="col-md-10">
         <div class="overview-wrap">
@@ -49,7 +50,6 @@
 
                 <div class="form-submit">
                     <input type="submit" value="Submit" class="submit" id="submit" name="submit" />
-                    <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
                 </div>
                 </form>
             </div>
@@ -64,32 +64,18 @@
         <h3 class="title-5 m-b-35">Flotilla</h3>
         <div class="table-data__tool">
             <div class="table-data__tool-left">
-                <div class="rs-select2--light rs-select2--md">
-                    <select class="js-select2" name="property">
-                        <option selected="selected">Propiedades</option>
-                        <option value="">Código</option>
-                        <option value="">Nombre Corto</option>
-                    </select>
-                    <div class="dropDownSelect2"></div>
-                </div>
-
-                <button class="au-btn-filter">
-                    <i class="zmdi zmdi-filter-list"></i>Filtrar</button>
+               
             </div>
             <div class="table-data__tool-right">
 
                 <div class="rs-select2--light">
                     <form class="form-header" action="" method="">
-                        <input class="au-input " type="text" name="search" placeholder="Buscar" />
-                        <button class="au-btn--submit" type="submit">
+                        <input class="au-input " type="text" name="codigo_camion" placeholder="Buscar" />
+                        <a href="/camion/obtener-camion/{{codigo_camion}}" class="au-btn--submit" type="submit">
                             <i class="zmdi zmdi-search"></i>
-                        </button>
+                        </a>
                     </form>
                 </div>
-                <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                    <i class="zmdi zmdi-plus"></i>Agregar</button>
-
-
 
             </div>
         </div>
