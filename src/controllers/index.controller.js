@@ -18,7 +18,7 @@ indexCtrl.renderBodega = (req,res) => {
 } 
 
 indexCtrl.renderCamiones = (req,res) => {
-    res.render('camiones')
+    res.render('camion-new')
 } 
 
 indexCtrl.renderClientes = (req,res) => {
