@@ -13,57 +13,46 @@
             <div class="au-card-inner">
                 <h3 class="title-2">Editar</h3>
                 <div class="signup-form">
-                    <form class="register-form" id="register-form">
+                    {{#each cliente}}
+                      <form action="/cliente/editar-cliente/{{this.codigo_cliente}}?_method=PUT" method="POST" class="register-form" id="register-form">
+                        <input type="hidden" name="_method" value="PUT">
+                        <div class="form-input" style="visibility: hidden;">
+                            <input type="text" name="codigo_cliente" id="codigo_cliente" value="0" />
+                        </div>
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-input">
-                                    <label for="cliente_Code" class="required">Código de
-                                        Cliente</label>
-                                    <input type="text" name="cliente_Code" id="cliente_Code" />
-                                </div>
-                                <div class="form-input">
-                                    <label for="documentoIdentidad" class="required">Documento de
+                                    <label for="cliente_Cedula" class="required">Documento de
                                         Identidad</label>
-                                    <input type="text" name="documentoIdentidad" id="documentoIdentidad" />
+                                    <input type="text" name="documentoIdentidad" id="documentoIdentidad" value="{{this.documentoIdentidad}}"/>
                                 </div>
                                 <div class="form-input">
-                                    <label for="nombre" class="required">Nombre Completo</label>
-                                    <input type="text" name="nombre" id="nombre" />
+                                    <label for="cliente_Name" class="required">Nombre</label>
+                                    <input type="text" name="nombre" id="nombre" value="{{this.nombre}}"/>
                                 </div>
                                 <div class="form-input">
-                                    <label for="nombreCorto" class="required">Nombre Corto</label>
-                                    <input type="text" name="nombreCorto" id="nombreCorto" />
+                                    <label for="clienteShortName" class="required">Nombre Corto</label>
+                                    <input type="text" name="nombreCorto" id="nombreCorto" value="{{this.nombreCorto}}"/>
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <div class="form-input">
-                                    <label for="fechaIngreso" class="required">Fecha de
+                                    <label for="cliente_Date" class="required">Fecha de
                                         Ingreso</label>
-                                    <input type="date" name="fechaIngreso" id="fechaIngreso" />
-                                </div>
-                                <div class="select-list">
-                                    <label for="cliente_Estado" class="required">Estado</label>
-                                    <select name="cliente_Estado" id="cliente_Estado" class="form-control">
-                                        <option value="0">Seleccione una Opción</option>
-                                        <option value="1">Activo</option>
-                                        <option value="2">Inactivo</option>
-                                    </select>
+                                    <input type="date" name="fechaIngreso" id="fechaIngreso" value="{{this.fechaIngreso}}"/>
                                 </div>
                                 <div class="form-input">
-                                    <label for="correo" class="required">Correo
+                                    <label for="cliente_Email" class="required">Correo
                                         Electrónico</label>
-                                    <input type="correo" name="correo" id="correo" />
+                                    <input type="email" name="correo" id="correo" value="{{this.correo}}"/>
                                 </div>
                                 <div class="form-input">
-                                    <label for="telefonos" class="required">Teléfono Celular</label>
-                                    <input type="text" name="telefonos" id="telefonos" />
+                                    <label for="cliente_TelefonoCelular" class="required">Teléfonos</label>
+                                    <input type="text" name="telefonos" id="telefonos" value="{{telefonos}}"/>
                                 </div>
-                                
                                 <div class="form-input">
-                                    <label for="direccion" class="required">Dirección</label>
-                                    <textarea type="text" name="direccion" id="direccion"
-                                        rows="4"></textarea>
+                                    <label for="cliente_Address" class="required">Dirección</label>
+                                    <textarea type="text" name="direccion" id="direccion" value="{{this.direccion}}" rows="4"></textarea>
                                 </div>
 
                             </div>
@@ -71,9 +60,10 @@
                 </div>
 
                 <div class="form-submit">
-                    <input type="submit" value="Actualizar" class="submit" id="submit" name="submit" />
+                    <input type="submit" value="Submit" class="submit" id="submit" name="submit" />
                 </div>
                 </form>
+                {{/each}}
             </div>
         </div>
     </div>
