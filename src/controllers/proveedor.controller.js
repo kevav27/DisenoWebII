@@ -4,102 +4,72 @@ const proveedor = {};
 const Proveedor = require("../models/proveedor.model");
 
 
+
+proveedor.renderForm = async (req, res) => {
+  const proveedores = await Proveedor.find();
+  res.render('proveedores', { proveedores });
+}
+
 proveedor.crearNuevoProveedor = async (req, res) => {
-  const code = Math.floor((Math.random()*10000000));
-  const nuevoProveedor = new Proveedor({
-    codigo_proveedor: "PROV-"+code,
-    cedula: req.body.cedula,
-    tipoCedula: req.body.tipoCedula,
-    nombre: req.body.nombre,
-    nombreCorto: req.body.nombreCorto,
-    telefonos: req.body.telefonos,
-    correo: req.body.correo,
-    telefonoContactos: req.body.telefonoContactos,
-    direccion: req.body.direccion
-  });
-  await nuevoProveedor.save()
-    .then(nuevoProveedor => {
-      res.json(nuevoProveedor);
-    }).catch(err => {
-      res.status(500).send({
-        message: err.message || "Error al crear nuevo camión"
-      });
+  try {
+    const code = Math.floor((Math.random() * 10000000));
+    req.body.codigo_proveedor = "PROV-" + code;
+    const nuevoProveedor = new Proveedor({
+      codigo_proveedor: req.body.codigo_proveedor,
+      cedula: req.body.cedula,
+      tipoCedula: req.body.tipoCedula,
+      nombre: req.body.nombre,
+      nombreCorto: req.body.nombreCorto,
+      telefonos: req.body.telefonos,
+      correo: req.body.correo,
+      telefonoContactos: req.body.telefonoContactos,
+      direccion: req.body.direccion
     });
+    await nuevoProveedor.save()
+    res.redirect('/proveedor/add')
+  } catch (err) {
+    res.render('pantallaError', { err });
+  }
 };
 
 proveedor.listarProveedor = async (req, res) => {
-  await Proveedor.find()
-    .then(proveedor => {
-      res.json(proveedor);
-    }).catch(err => {
-      res.status(500).send({
-        message: err.message || "Error al recuperar los camiones de la base de datos"
-      });
-    });
+  const proveedores = await Proveedor.find()
 };
 
 
 proveedor.obtenerProveedor = async (req, res) => {
- await Proveedor.find({codigo_proveedor:req.params.codigo_proveedor})
-    .then(proveedor => {
-      if (!proveedor) {
-        return res.status(404).send({
-          message: "El camion con el código: " + req.params.codigo_camion + " no existe"
-        });
-      }
-      res.send(proveedor);
-    }).catch(err => {
-      if (err.kind === 'ObjectId') {
-        return res.status(404).send({
-          message: "No se encontró ningún camión con el código: " + req.params.codigo_camion
-        });
-      }
-      return res.status(500).send({
-        message: "Error al recuperar camión código: " + req.params.codigo_camion
-      });
-    });
+  try {
+    const proveedor = await Proveedor.find({ codigo_proveedor: req.params.codigo_proveedor })
+    res.render('proveedor', {proveedor})
+  } catch (err) {
+    res.render('pantallaError', { err })
+  }
+}
+
+
+proveedor.renderEdit = async (req, res) => {
+  const producto = await Producto.find({ codigo_producto: req.params.codigo_producto })
+  res.render('proveedor-edit', {producto})
 }
 
 proveedor.actualizarProveedor = async (req, res) => {
-  await Proveedor.findOneAndUpdate({codigo_proveedor:req.params.codigo_proveedor}, { $set: req.body }, { new: true})
-    .then(proveedor => {
-      if (!proveedor) {
-        return res.status(404).send({
-          message: "No existe el camión con el código: " + req.params.codigo_camion
-        });
-      }
-      res.send(proveedor)
-    }).catch(err => {
-      if (err.kind === 'ObjectId') {
-        return res.status(404).send({
-          message: "No se encontró un camión con el código: " + req.params.codigo_camion
-        });
-      }
-      return res.status(500).send({
-        message: "Error al intentar actualizar el camión con el código: " + req.params.codigo_camion
-      });
-    });
+  try{
+  const proveedor = await Proveedor.findOneAndUpdate({ codigo_proveedor: req.params.codigo_proveedor }, 
+    { $set: req.body }, 
+    { new: true })
+  res.redirect('proveedor/add')
+  }catch(err){
+    res.render('pantallaError', err)
+  }
 };
 
 proveedor.eliminarProveedor = async (req, res) => {
-  await Proveedor.deleteOne({codigo_proveedor:req.params.codigo_proveedor})
-    .then(proveedor => {
-      if (!proveedor) {
-        return res.status(404).send({
-          message: "No existe el camión con el código: " + req.params.codigo_camion
-        });
-      }
-      res.send({ "message": "Se eliminó el camión" })
-    }).catch(err => {
-      if (err.kind === 'ObjectId') {
-        return res.status(404).send({
-          message: "No se encontró un camión con el código: " + req.params.codigo_camion
-        });
-      }
-      return res.status(500).send({
-        message: `Error al intentar eliminar el camión con el código: ${req.params.codigo_camion}`
-      });
-    });
+  try{
+    await Proveedor.deleteOne({ codigo_proveedor: req.params.codigo_proveedor })
+    res.redirect('/producto/add')
+    }catch(err){
+      res.render('pantallaError', { err })
+    }
 };
 
 module.exports = proveedor;

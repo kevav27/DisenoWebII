@@ -2,8 +2,10 @@
     <div class="col-md-10">
         <div class="overview-wrap">
             <h2 class="title-1">Proveedores</h2>
-            <button class="au-btn au-btn-icon au-btn--blue">
-                <i class="zmdi zmdi-plus"></i>Agregar</button>
+            <form action="/producto/add">
+                <button class="au-btn au-btn-icon au-btn--blue">
+                    <i class="zmdi zmdi-plus"></i>REFRESCAR DATA</button>
+            </form>
         </div>
     </div>
 </div>
@@ -14,7 +16,7 @@
             <div class="au-card-inner">
                 <h3 class="title-2">Registro</h3>
                 <div class="signup-form">
-                    <form class="register-form" id="register-form">
+                    <form action="/proveedor/add" method="POST" class="register-form" id="register-form">
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-input">
