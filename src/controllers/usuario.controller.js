@@ -1,100 +1,62 @@
 const usuarioCtrl = {};
-
+const passport = require('passport')
 // Models
 const Usuario = require("../models/usuario.model");
 
-usuarioCtrl.crearNuevoUsuario = async (req, res) => {
-  const nuevoUsuario = new Usuario({
-    email: req.body.email,
-    user: req.body.user,
-    nombre: req.body.nombre,
-    rol: req.body.rol,
-    password: req.body.password,
-    estado: req.body.estado
-  });
-  await nuevoUsuario.save()
-    .then(nuevoUsuario => {
-      res.json(nuevoUsuario);
-    }).catch(err => {
-      res.status(500).send({
-        message: err.message || "Error al crear nuevo camión"
-      });
-    });
-};
-
-usuarioCtrl.listarUsuario = async (req, res) => {
-  await Usuario.find()
-    .then(usuario => {
-      res.send(usuario);
-    }).catch(err => {
-      res.status(500).send({
-        message: err.message || "Error al recuperar bodegas de la base de datos"
-      });
-    });
-};
-
-
-usuarioCtrl.obtenerUsuario = async (req, res) => {
- await Usuario.find({user: req.params.user})
-    .then(usuario => {
-      if (!usuario) {
-        return res.status(404).send({
-          message: "El camion con el código: " + req.params.codigo_bodega + " no existe"
-        });
-      }
-      res.send(usuario);
-    }).catch(err => {
-      if (err.kind === 'ObjectId') {
-        return res.status(404).send({
-          message: "No se encontró ningún camión con el código: " + req.params.codigo_bodega
-        });
-      }
-      return res.status(500).send({
-        message: "Error al recuperar camión código: " + req.params.codigo_bodega
-      });
-    });
+usuarioCtrl.renderSignupForm = (req, res) => {
+  res.render('users/registro');
 }
 
-usuarioCtrl.actualizarUsuario = async (req, res) => {
-  await Usuario.findOneAndUpdate({user: req.params.user}, { $set: req.body }, { new: true})
-    .then(usuario => {
-      if (!usuario) {
-        return res.status(404).send({
-          message: "No existe el camión con el código: " +req.params.codigo_bodega
-        });
+usuarioCtrl.registro = async (req, res) => {
+  const errors = [];
+  const { user, email, password } = req.body;
+  
+
+
+  if(user.length < 5){
+    errors.push({text:'El usuario tiene que ser mayor a 5 caracteres'});
+  }
+  if(password.length < 4){
+    errors.push({text:'La contraseña tiene que ser mayor a 4 caracteres'});
+  }
+  if(errors.length > 0){
+    res.render('users/registro', {
+      errors ,user, email, password
+    })
+  }else {
+    const emailUser = await Usuario.findOne({email: email});
+    if (emailUser){
+        req.flash('error_msg', 'El correo ya esta en uso');
+        res.redirect('/users/registro');
+      }else{
+        const newUser = new Usuario({user, email, password});
+        newUser.password = await newUser.encryptPassword(password);
+        await newUser.save();
+        req.flash('success_msg', 'Esta Registrado');
+
+        res.redirect('/users/login');
       }
-      res.send(usuario)
-    }).catch(err => {
-      if (err.kind === 'ObjectId') {
-        return res.status(404).send({
-          message: "No se encontró un camión con el código: " + req.params.codigo_bodega
-        });
-      }
-      return res.status(500).send({
-        message: "Error al intentar actualizar el camión con el código: " + req.params.codigo_bodega
-      });
-    });
+    }
 };
 
-usuarioCtrl.eliminarUsuario = async (req, res) => {
-  await Usuario.deleteOne({user: req.params.user})
-    .then(usuario => {
-      if (!usuario) {
-        return res.status(404).send({
-          message: "No existe el camión con el código: " + req.params.codigo_bodega
-        });
-      }
-      res.send({ "message": "Se eliminó el camión" })
-    }).catch(err => {
-      if (err.kind === 'ObjectId') {
-        return res.status(404).send({
-          message: "No se encontró un camión con el código: " + req.params.codigo_bodega
-        });
-      }
-      return res.status(500).send({
-        message: `Error al intentar eliminar el camión con el código: ${req.params.codigo_bodega}`
-      });
-    });
-};
+usuarioCtrl.renderLoginForm =(req,res) => {
+  res.render('users/login');
+}
+
+usuarioCtrl.login = passport.authenticate('local', {
+  failureRedirect: '/users/login', 
+  successRedirect:'/notes',
+  failureRedirect: true
+});
+usuarioCtrl.logout = (req, res) => {
+  res.send('logout')
+}
+
+usuarioCtrl.renderPassword =(req,res) => {
+  res.render('users/password');
+}
+usuarioCtrl.password = (req,res) => {
+  res.send('password')
+}
 
 module.exports = usuarioCtrl;

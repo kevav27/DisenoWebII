@@ -1,7 +1,7 @@
 const { Router } = require('express')
 const router = Router();
 
-const { renderIndex, renderBitacorasConsultas, renderBitacorasRegistro, renderBodega,renderCamiones, renderClientes, renderClientesConsultas, renderConfirmarOrden,renderConsecutivos, renderCrearOrden, renderEventos, renderInventario, renderMateriaPrima, renderParametros, renderPedidosPendientesConsultas, renderProduccionLote, renderProductos, renderProveedores,renderPuntoVenta, renderRoles,renderTiposMateriaPrima, renderUsuarios,renderLogin,renderRegistro, renderError} = require('../controllers/index.controller')
+const { renderIndex, renderBitacorasConsultas, renderBitacorasRegistro, renderBodega,renderCamiones, renderClientes, renderClientesConsultas, renderConfirmarOrden,renderConsecutivos, renderCrearOrden, renderEventos, renderInventario, renderMateriaPrima, renderParametros, renderPedidosPendientesConsultas, renderProduccionLote, renderProductos, renderProveedores,renderPuntoVenta, renderRoles,renderTiposMateriaPrima, renderUsuarios, renderError} = require('../controllers/index.controller')
 
 router.get('/', renderIndex);
 
@@ -46,10 +46,6 @@ router.get('/roles', renderRoles);
 router.get('/tiposMateriaPrima', renderTiposMateriaPrima);
 
 router.get('/usuarios', renderUsuarios);
-
-router.get('/login', renderLogin);
-
-router.get('/registro', renderRegistro);
 
 router.get('/error', renderError);
 

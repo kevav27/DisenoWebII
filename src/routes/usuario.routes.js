@@ -3,31 +3,35 @@ const router = express.Router();
 
 // Controller
 const {
-    crearNuevoUsuario,
-    listarUsuario,
-    obtenerUsuario,
-    actualizarUsuario,
-    eliminarUsuario
+
+    renderSignupForm,
+    renderLoginForm,
+    login,
+    logout,
+    registro,
+    renderPassword,
+    password,
+
 } = require("../controllers/usuario.controller");
 
 // Crear nuevo usuario
 
-router.post("/usuario/nuevo-usuario", crearNuevoUsuario);
-
-// Listar usuarios
-router.get("/usuario", listarUsuario);
-
-
-//Obtener un usuario
-router.get("/usuario/obtener-usuario/:username", obtenerUsuario);
-
-// Editar usuario
-
-router.put("/usuario/editar-usuario/:username", actualizarUsuario);
-
-// Borrar usuario
-router.delete("/usuario/eliminar-usuario/:username", eliminarUsuario);
-
-
 //LOGIN Y CAMBIAR CONTRASEÑA FALTAN
+
+router.get('/users/registro', renderSignupForm);
+
+router.post('/users/registro', registro);
+
+router.get('/users/login', renderLoginForm);
+
+router.post('/users/login', login);
+
+router.get('/users/logout', logout);
+
+router.get('/users/password', renderPassword);
+
+router.post('/users/password', password);
+
+
+
 module.exports = router;
