@@ -1,77 +1,37 @@
 <div class="row">
-    <div class="col-md-12">
-        <!-- DATA TABLE -->
-        <h3 class="title-5 m-b-35">ERROR</h3>
-        <div class="table-data__tool">
-            <div class="table-data__tool-left">
-                <div class="rs-select2--light rs-select2--md">
-                    <select class="js-select2" name="property">
-                        <option selected="selected">Propiedades</option>
-                        <option value="">Código</option>
-                        <option value="">Nombre Corto</option>
-                    </select>
-                    <div class="dropDownSelect2"></div>
-                </div>
-
-                <button class="au-btn-filter">
-                    <i class="zmdi zmdi-filter-list"></i>Filtrar</button>
-            </div>
-            <div class="table-data__tool-right">
-
-                <div class="rs-select2--light">
-                    <form class="form-header" action="" method="">
-                        <input class="au-input " type="text" name="search" placeholder="Buscar" />
-                        <button class="au-btn--submit" type="submit">
-                            <i class="zmdi zmdi-search"></i>
-                        </button>
-                    </form>
-                </div>
-                <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                    <i class="zmdi zmdi-plus"></i>Agregar</button>
-
-
-
-            </div>
-        </div>
-        <div class="table-responsive table-responsive-data3">
-            <table class="table table-data2">
-                <thead>
-                    <tr>
-                        <th>Código</th>
-                        <th>Descripción</th>
-                        <th>Nombre Corto</th>
-                        <th>Marca</th>
-                        <th>Año</th>
-                        <th>Placa</th>
-                        <th></th>
-
-                    </tr>
-                </thead>
-                <tbody>
-                    {{#each camiones}}
-                    <tr class="tr-shadow">
-                        <td>{{this.codigo_camion}}</td>
-                        <td>{{this.descripcion}}</td>
-                        <td>{{this.nombreCorto}}</td>
-                        <td>{{this.marca}}</td>
-                        <td>{{this.year}}</td>
-                        <td>{{this.placa}}</td>
-                        <td>
-                            <div class="table-data-feature">
-                                <a href="/camion/editar-camion/{{codigo_camion}}" class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                    <i class="zmdi zmdi-edit"></i>
-                                </a>
-                                <a href="/camion/eliminar-camion/{{codigo_camion}}" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
-                                    <i class="zmdi zmdi-delete"></i>
-                                </a>
+ <form action="/camion/editar-camion/{{this.codigo_camion}}?_method=PUT" method="POST" class="register-form" id="register-form">
+                        <input type="hidden" name="_method" value="PUT">
+                        <label> {{camion.descripcion}}</label>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="descripcion" class="required">Descripción</label>
+                                    <input type="text" name="descripcion" id="descripcion" value="{{camion.descripcion}}"/>
+                                </div>
+                                <div class="form-input">
+                                    <label for="nombreCorto" class="required">Nombre Corto</label>
+                                    <input type="text" name="nombreCorto" id="camionShortName" value="{{camion.nombreCorto}}"/>
+                                </div>
                             </div>
-                        </td>
-                    </tr>
-                    {{/each}}
-                    <tr class="spacer"></tr>
-                </tbody>
-            </table>
-        </div>
-        <!-- END DATA TABLE -->
-    </div>
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="marca" class="required">Marca</label>
+                                    <input type="text" name="marca" id="marca" value="{{camion.marca}}"/>
+                                </div>
+                                <div class="form-input">
+                                    <label for="year" class="required">Año</label>
+                                    <input type="text" name="year" id="year" value="{{camion.year}}"/>
+                                </div>
+                                <div class="form-input">
+                                    <label for="placa" class="required">Placa</label>
+                                    <input type="text" name="placa" id="placa" value="{{camion.placa}}"/>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="form-submit">
+                    <input type="submit" value="Actualizar" class="submit" id="submit" name="submit" />
+                </div>
+                </form>
 </div>

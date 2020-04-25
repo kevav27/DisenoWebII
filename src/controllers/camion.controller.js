@@ -46,13 +46,8 @@ camionCtrl.obtenerCamion = async (req, res) => {
 
 
 camionCtrl.renderActualizarCamionForm = async (req, res) => {
-  try{
-  const camion = await Camion.find ({ codigo_camion: req.params.codigo_camion });
-  console.log(camion)
-  res.render('camion-edit', {camion})
-  }catch(err){
-    res.render('pantallaError', { err })
-  }
+    const camion = await Camion.find({ codigo_camion: req.params.codigo_camion })
+    res.render('camion-edit', {camion})
 }
 
 camionCtrl.actualizarCamion = async (req, res) => {
@@ -60,8 +55,9 @@ camionCtrl.actualizarCamion = async (req, res) => {
   await Camion.updateOne({ codigo_camion: req.params.codigo_camion },
     { $set: req.body },
     { new: true })
+    res.redirect('/camion/add')
   }catch(err){
-
+    res.render('pantallaError', { err })
   }
 };
 
