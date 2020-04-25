@@ -14,7 +14,7 @@ const {
 
 // Crear nuevo camión
 
-router.get("/camion/nuevo-camion", renderCamionForm);
+router.get("/camion/add", renderCamionForm);
 router.post("/camion/nuevo-camion", crearNuevoCamion);
 
 // Listar todos los camiones
@@ -25,7 +25,7 @@ router.get("/camion/lista", listarCamiones);
 router.get("/camion/obtener-camion/:codigo_camion", obtenerCamion);
 
 // Edit Notes
-/*router.get("/camion/editar/:codigo_camion", renderActualizarCamionForm);*/
+router.get("/camion/editar/:codigo_camion", renderActualizarCamionForm);
 router.put("/camion/editar-camion/:codigo_camion", actualizarCamion);
 
 // Delete Notes

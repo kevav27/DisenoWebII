@@ -3,6 +3,8 @@ const router = express.Router();
 
 // Controller
 const {
+    renderForm,
+    renderEdit,
     crearNuevoProducto,
     listarProducto,
     obtenerProducto,
@@ -11,7 +13,7 @@ const {
 } = require("../controllers/producto.controller");
 
 // Crear nuevo camión
-
+router.get("/producto/add", renderForm);
 router.post("/producto/nuevo-producto", crearNuevoProducto);
 
 // Listar todos los camiones
@@ -22,6 +24,7 @@ router.get("/producto", listarProducto);
 router.get("/producto/obtener-producto/:codigo_producto", obtenerProducto);
 
 // Edit Notes
+router.get("/producto/editar/:codigo_producto", renderEdit)
 router.put("/producto/editar-producto/:codigo_producto", actualizarProducto);
 
 // Delete Notes

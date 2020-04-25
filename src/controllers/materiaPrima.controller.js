@@ -3,101 +3,71 @@ const materiaPrimaCtrl = {};
 // Models
 const MateriaPrima = require("../models/materiaPrima.model");
 
-materiaPrimaCtrl.crearNuevaMateriaPrima = async (req, res) => {
-  //const espacio = Producto.find({nombreBodega:req.body.nombre}).countDocuments();
-  const code = Math.floor((Math.random()*10000000));
-  const nuevaMateriaPrima = new MateriaPrima({
-    codigo_bodega: "BOD-"+code,
-    nombre: req.body.nombreCorto,
-    nombreCorto: req.body.nombreCorto,
-    alias: req.body.alias,
-    ubicacion: req.body.ubicacion,
-    unidadMedida: req.body.unidadMedida,
-    nombreCorto: req.body.nombreCorto,
-  });
-  await nuevaMateriaPrima.save()
-    .then(nuevaMateria => {
-      res.json(nuevaMateria);
-    }).catch(err => {
-      res.status(500).send({
-        message: err.message || "Error al crear nuevo camión"
-      });
-    });
-};
-
-materiaPrimaCtrl.listarMateriaPrima = async (req, res) => {
-  await MateriaPrima.find()
-    .then(materia => {
-      res.send(materia);
-    }).catch(err => {
-      res.status(500).send({
-        message: err.message || "Error al recuperar bodegas de la base de datos"
-      });
-    });
-};
-
-
-materiaPrimaCtrl.obtenerMateriaPrima = async (req, res) => {
- await MateriaPrima.find({codigo_materiaPrima: req.params.codigo_materiaPrima})
-    .then(materia => {
-      if (!materia) {
-        return res.status(404).send({
-          message: "El camion con el código: " + req.params.codigo_bodega + " no existe"
-        });
-      }
-      res.send(materia);
-    }).catch(err => {
-      if (err.kind === 'ObjectId') {
-        return res.status(404).send({
-          message: "No se encontró ningún camión con el código: " + req.params.codigo_bodega
-        });
-      }
-      return res.status(500).send({
-        message: "Error al recuperar camión código: " + req.params.codigo_bodega
-      });
-    });
+materiaPrimaCtrl.renderForm = async (req, res) => {
+  const materias = await MateriaPrima.find()
+  res.render("materiaPrima", { materias })
 }
 
-materiaPrimaCtrl.actualizarMateriaPrima = async (req, res) => {
-  await MateriaPrima.findOneAndUpdate({codigo_materiaPrima: req.params.codigo_materiaPrima}, { $set: req.body }, { new: true})
-    .then(materia => {
-      if (!materia) {
-        return res.status(404).send({
-          message: "No existe el camión con el código: " +req.params.codigo_bodega
-        });
-      }
-      res.send(materia)
-    }).catch(err => {
-      if (err.kind === 'ObjectId') {
-        return res.status(404).send({
-          message: "No se encontró un camión con el código: " + req.params.codigo_bodega
-        });
-      }
-      return res.status(500).send({
-        message: "Error al intentar actualizar el camión con el código: " + req.params.codigo_bodega
-      });
+materiaPrimaCtrl.crearNuevaMateriaPrima = async (req, res) => {
+  try {
+    const code = Math.floor((Math.random() * 10000000));
+    req.body.codigo_materiaPrima = "MP-" + code;
+    const nuevaMateriaPrima = new MateriaPrima({
+      codigo_materiaPrima: req.body.codigo_materiaPrima,
+      nombre: req.body.nombre,
+      nombreCorto: req.body.nombreCorto,
+      alias: req.body.alias,
+      ubicacion: req.body.ubicacion,
+      unidadDeMedida: req.body.unidadDeMedida,
     });
-};
+    await nuevaMateriaPrima.save()
+    res.redirect('/materia-prima/add')
+  }catch(err){
+    res.render('pantallaError', {err})
+  }
+  };
 
-materiaPrimaCtrl.eliminarMateriaPrima = async (req, res) => {
-  await MateriaPrima.deleteOne({codigo_materiaPrima: req.params.codigo_materiaPrima})
-    .then(materia => {
-      if (!materia) {
-        return res.status(404).send({
-          message: "No existe el camión con el código: " + req.params.codigo_bodega
-        });
-      }
-      res.send({ "message": "Se eliminó el camión" })
-    }).catch(err => {
-      if (err.kind === 'ObjectId') {
-        return res.status(404).send({
-          message: "No se encontró un camión con el código: " + req.params.codigo_bodega
-        });
-      }
-      return res.status(500).send({
-        message: `Error al intentar eliminar el camión con el código: ${req.params.codigo_bodega}`
-      });
-    });
-};
+  materiaPrimaCtrl.listarMateriaPrima = async (req, res) => {
+    const materia = await MateriaPrima.find()
+  };
 
-module.exports = materiaPrimaCtrl;
+
+  materiaPrimaCtrl.obtenerMateriaPrima = async (req, res) => {
+    try {
+      const materia =  await MateriaPrima.find({ codigo_materiaPrima: req.params.codigo_materiaPrima })
+      res.render('productos', {materia})
+      }
+      catch (err) {
+        res.render('pantallaError', { err })
+      }
+  }
+
+  materiaPrimaCtrl.renderEdit = async (req, res) => {
+    const materia = await MateriaPrima.find({ codigo_materiaPrima: req.params.codigo_materiaPrima })
+    res.render('materiaPrima-edit', {materia})
+  }
+  
+
+  materiaPrimaCtrl.actualizarMateriaPrima = async (req, res) => {
+    
+    try{
+      await MateriaPrima.findOneAndUpdate({ codigo_materiaPrima: req.params.codigo_materiaPrima }, 
+        { $set: req.body }, 
+        { new: true })
+        res.redirect('/materia-prima/add')
+      }catch(err){
+        res.render('pantallaError', { err })
+      }
+  };
+
+  materiaPrimaCtrl.eliminarMateriaPrima = async (req, res) => {
+    
+    try{
+      await MateriaPrima.deleteOne({ codigo_materiaPrima: req.params.codigo_materiaPrima })
+      res.redirect('/materia-prima/add')
+      }catch(err){
+        res.render('pantallaError', { err })
+      }
+  };
+
+  module.exports = materiaPrimaCtrl;

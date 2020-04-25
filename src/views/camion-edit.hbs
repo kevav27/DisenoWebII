@@ -12,39 +12,42 @@
             <div class="au-card-inner">
                 <h3 class="title-2">Editar</h3>
                 <div class="signup-form">
-                    <form action="" method="POST" class="register-form" id="register-form">
+                    {{#each camion}}
+                    <form action="/camion/editar-camion/{{this.codigo_camion}}?_method=PUT" method="POST" class="register-form" id="register-form">
+                        <input type="hidden" name="_method" value="PUT">
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-input">
                                     <label for="descripcion" class="required">Descripción</label>
-                                    <input type="text" name="descripcion" id="camionName" />
+                                    <input type="text" name="descripcion" id="descripcion" value="{{this.descripcion}}"/>
                                 </div>
                                 <div class="form-input">
                                     <label for="nombreCorto" class="required">Nombre Corto</label>
-                                    <input type="text" name="nombreCorto" id="camionShortName" />
+                                    <input type="text" name="nombreCorto" id="camionShortName" value="{{this.nombreCorto}}"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-input">
                                     <label for="marca" class="required">Marca</label>
-                                    <input type="text" name="marca" id="marca" />
+                                    <input type="text" name="marca" id="marca" value="{{this.marca}}"/>
                                 </div>
                                 <div class="form-input">
                                     <label for="year" class="required">Año</label>
-                                    <input type="text" name="year" id="year" />
+                                    <input type="text" name="year" id="year" value="{{this.year}}"/>
                                 </div>
                                 <div class="form-input">
                                     <label for="placa" class="required">Placa</label>
-                                    <input type="text" name="placa" id="placa" />
+                                    <input type="text" name="placa" id="placa" value="{{this.placa}}"/>
                                 </div>
                             </div>
                         </div>
                 </div>
 
-                <div class="form-submit">
-                    <input type="submit" value="Actualizar" class="submit" id="submit" name="submit" />
-                </div>
+                        <div class="form-submit">
+                            <input type="submit" value="Actualizar" class="submit" id="submit" name="submit" />
+                        </div>
                 </form>
+                {{/each}}
             </div>
         </div>
     </div>

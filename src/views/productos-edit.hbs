@@ -14,62 +14,41 @@
             <div class="au-card-inner">
                 <h3 class="title-2">Editar</h3>
                 <div class="signup-form">
-                    <form class="register-form" id="register-form">
+                   {{#each producto}}
+                      <form action="/producto/editar-producto/{{this.codigo_producto}}?_method=PUT" method="POST" class="register-form" id="register-form">
+                        <input type="hidden" name="_method" value="PUT">
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-input">
-                                    <label for="codigo_producto" class="required">Código de
-                                        Producto</label>
-                                    <input type="text" name="codigo_producto" id="codigo_producto" />
+                                    <label for="productosName" class="required">Descripción</label>
+                                    <input type="text" name="descripcion" id="descripcion" value="{{this.descripcion}}"/>
                                 </div>
                                 <div class="form-input">
-                                    <label for="descripcion" class="required">Descripción</label>
-                                    <input type="text" name="descripcion" id="descripcion" />
-                                </div>
-                                <div class="form-input">
-                                    <label for="nombreCorto" class="required">Nombre
+                                    <label for="productosShortName" class="required">Nombre
                                         Corto</label>
-                                    <input type="text" name="nombreCorto" id="nombreCorto" />
+                                    <input type="text" name="nombreCorto" id="nombreCorto" value="{{this.nombreCorto}}"/>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="form-input">
-                                    <label for="puntoReorden" class="required">Punto de
+                                    <label for="productosReorden" class="required">Punto de
                                         Re-Orden</label>
-                                    <input type="text" name="puntoReorden" id="puntoReorden" />
+                                    <input type="text" name="puntoReorden" id="puntReorden" value="{{this.puntoReorden}}"/>
                                 </div>
-                                <div class="select-list">
-                                    <label for="unidadDeMedida" class="required">Unidad de
+                                <div class="form-input">
+                                    <label for="productos_Medida" class="required">Unidad de
                                         Medida</label>
-                                    <select name="unidadDeMedida" id="unidadDeMedida" class="form-control">
-                                        <option value="0">Seleccione una Opción</option>
-                                        <option value="1">Metros</option>
-                                        <option value="2">Metros Cúbicos</option>
-                                        <option value="3">Metros Cuadrados</option>
-                                        <option value="4">Litros</option>
-                                        <option value="3">Mililitros</option>
-                                    </select>
+                                    <input type="text" name="unidadDeMedida" id="unidadDeMedida" value="{{this.unidadDeMedida}}" />
                                 </div>
-                                <div class="form-input">
-                                    <label for="productosCode" class="required">Código de Tipo
-                                        Materia Prima</label>
-                                    <input type="text" name="productosCode" id="productosCode" />
-                                </div>
-                                <div class="form-input">
-                                    <label for="codigo_materiaPrima" class="required">Código de Materia
-                                        Prima</label>
-                                    <input type="text" name="codigo_materiaPrima"
-                                        id="codigo_materiaPrima" />
-                                </div>
-
                             </div>
                         </div>
                 </div>
 
                 <div class="form-submit">
-                    <input type="submit" value="Actualizar" class="submit" id="submit" name="submit" />
+                    <input type="submit" value="Submit" class="submit" id="submit" name="submit" />
                 </div>
                 </form>
+                {{/each}}
             </div>
         </div>
     </div>

@@ -2,8 +2,10 @@
     <div class="col-md-10">
         <div class="overview-wrap">
             <h2 class="title-1">Clientes</h2>
-            <button class="au-btn au-btn-icon au-btn--blue">
-                <i class="zmdi zmdi-plus"></i>Agregar</button>
+            <form action="/cliente/add">
+                <button class="au-btn au-btn-icon au-btn--blue">
+                    <i class="zmdi zmdi-plus"></i>REFRESCAR DATA</button>
+            </form>
         </div>
     </div>
 </div>
@@ -14,75 +16,44 @@
             <div class="au-card-inner">
                 <h3 class="title-2">Registro</h3>
                 <div class="signup-form">
-                    <form class="register-form" id="register-form">
+                    <form action="/cliente/nuevo-cliente" method="POST" class="register-form" id="register-form">
+                        <div class="form-input" style="visibility: hidden;">
+                            <input type="text" name="codigo_cliente" id="codigo_cliente" value="0" />
+                        </div>
                         <div class="form-row">
                             <div class="form-group">
                                 <div class="form-input">
-                                    <label for="cliente_Code" class="required">Código de
-                                        Cliente</label>
-                                    <input type="text" name="cliente_Code" id="cliente_Code" />
-                                </div>
-                                <div class="form-input">
                                     <label for="cliente_Cedula" class="required">Documento de
                                         Identidad</label>
-                                    <input type="text" name="cliente_Cedula" id="cliente_Cedula" />
+                                    <input type="text" name="documentoIdentidad" id="documentoIdentidad" />
                                 </div>
                                 <div class="form-input">
                                     <label for="cliente_Name" class="required">Nombre</label>
-                                    <input type="text" name="cliente_Name" id="cliente_Name" />
-                                </div>
-                                <div class="form-input">
-                                    <label for="clienteLastname" class="required">Primer
-                                        Apellido</label>
-                                    <input type="text" name="clienteLastname" id="clienteLastname" />
-                                </div>
-                                <div class="form-input">
-                                    <label for="cliente_SecondLastname" class="required">Segundo
-                                        Apellido</label>
-                                    <input type="text" name="cliente_SecondLastname" id="cliente_SecondLastname" />
+                                    <input type="text" name="nombre" id="nombre" />
                                 </div>
                                 <div class="form-input">
                                     <label for="clienteShortName" class="required">Nombre Corto</label>
-                                    <input type="text" name="clienteShortName" id="clienteShortName" />
+                                    <input type="text" name="nombreCorto" id="nombreCorto" />
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <div class="form-input">
                                     <label for="cliente_Date" class="required">Fecha de
                                         Ingreso</label>
-                                    <input type="date" name="cliente_Date" id="cliente_Date" />
-                                </div>
-                                <div class="select-list">
-                                    <label for="cliente_Estado" class="required">Estado</label>
-                                    <select name="cliente_Estado" id="cliente_Estado" class="form-control">
-                                        <option value="0">Seleccione una Opción</option>
-                                        <option value="1">Activo</option>
-                                        <option value="2">Inactivo</option>
-                                    </select>
+                                    <input type="date" name="fechaIngreso" id="fechaIngreso" />
                                 </div>
                                 <div class="form-input">
                                     <label for="cliente_Email" class="required">Correo
                                         Electrónico</label>
-                                    <input type="email" name="cliente_Email" id="clienteEmail" />
+                                    <input type="email" name="correo" id="correo" />
                                 </div>
                                 <div class="form-input">
-                                    <label for="cliente_TelefonoCelular" class="required">Teléfono Celular</label>
-                                    <input type="text" name="cliente_TelefonoCelular" id="cliente_TelefonoCelular" />
-                                </div>
-                                <div class="form-input">
-                                    <label for="cliente_TelefonoHabitación">Teléfono Habitación</label>
-                                    <input type="text" name="cliente_TelefonoHabitación"
-                                        id="cliente_TelefonoHabitación" />
-                                </div>
-                                <div class="form-input">
-                                    <label for="cliente_TelefonoTrabajo">Teléfono Trabajo</label>
-                                    <input type="text" name="cliente_TelefonoTrabajo" id="cliente_TelefonoTrabajo" />
+                                    <label for="cliente_TelefonoCelular" class="required">Teléfonos</label>
+                                    <input type="text" name="telefonos" id="telefonos" />
                                 </div>
                                 <div class="form-input">
                                     <label for="cliente_Address" class="required">Dirección</label>
-                                    <textarea type="text" name="cliente_Address" id="cliente_Address"
-                                        rows="4"></textarea>
+                                    <textarea type="text" name="direccion" id="direccion" rows="4"></textarea>
                                 </div>
 
                             </div>
@@ -91,7 +62,6 @@
 
                 <div class="form-submit">
                     <input type="submit" value="Submit" class="submit" id="submit" name="submit" />
-                    <input type="submit" value="Reset" class="submit" id="reset" name="reset" />
                 </div>
                 </form>
             </div>
@@ -106,30 +76,18 @@
         <h3 class="title-5 m-b-35">Listado</h3>
         <div class="table-data__tool">
             <div class="table-data__tool-left">
-                <div class="rs-select2--light rs-select2--md">
-                    <select class="js-select2" name="property">
-                        <option selected="selected">Propiedades</option>
-                        <option value="">Código</option>
-                        <option value="">Nombre Corto</option>
-                    </select>
-                    <div class="dropDownSelect2"></div>
-                </div>
-
-                <button class="au-btn-filter">
-                    <i class="zmdi zmdi-filter-list"></i>Filtrar</button>
+          
             </div>
             <div class="table-data__tool-right">
 
                 <div class="rs-select2--light">
-                    <form class="form-header" action="" method="">
-                        <input class="au-input " type="text" name="search" placeholder="Buscar" />
-                        <button class="au-btn--submit" type="submit">
+                   <form action="/cliente/obtener-cliente/:"codigo_cliente method="GET" class="form-header" action="" method="">
+                        <input class="au-input " type="text" name="codigo_cliente" id="codigo_cliente" placeholder="Buscar" />
+                        <button class="au-btn--submit" value="Submit" type="submit">
                             <i class="zmdi zmdi-search"></i>
                         </button>
                     </form>
                 </div>
-                <button class="au-btn au-btn-icon au-btn--green au-btn--small">
-                    <i class="zmdi zmdi-plus"></i>Agregar</button>
 
 
 
@@ -152,43 +110,38 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {{#each clientes}}
                     <tr class="tr-shadow">
-
-                        <td>CL9320</td>
-                        <td>01-1342-1357</td>
-                        <td class="desc">Guillermo Villegas Chávez</td>
-                        <td>GuiVi</td>
-                        <td>11-03-2020</td>
-                        <td>
-                            <span class="status--process">Activo</span>
-                        </td>
-                        <td>
-                            <span class="block-email">lori@example.com</span>
-                        </td>
-                        <td>8732-3969</td>
-                        <td>Avenida 3, San Jose, Desamparados</td>
+                        <td>{{this.codigo_cliente}}</td>
+                        <td>{{this.documentoIdentidad}}</td>
+                        <td>{{this.nombre}}</td>
+                        <td>{{this.nombreCorto}}</td>
+                        <td>{{this.fechaIngreso}}</td>
+                        <td></td>
+                        <td>{{this.correo}}</td>
+                        <td>{{this.telefonos}}</td>
+                        <td>{{this.direccion}}</td>
                         <td>
                             <div class="table-data-feature">
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="Send">
-                                    <i class="zmdi zmdi-plus"></i>
-                                </button>
+                                 <form action="/cliente/editar/{{codigo_cliente}}">
                                 <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
                                     <i class="zmdi zmdi-edit"></i>
                                 </button>
+                                </form>
+                                <form action="/cliente/eliminar-cliente/{{codigo_cliente}}?_method=DELETE" method="POST">
+                                <input type="hidden" name="_method" value="DELETE">
                                 <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                     <i class="zmdi zmdi-delete"></i>
                                 </button>
-                                <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                    <i class="zmdi zmdi-more"></i>
-                                </button>
+                                </form>
                             </div>
                         </td>
                     </tr>
                     <tr class="spacer"></tr>
+                    {{/each}}
                 </tbody>
             </table>
         </div>
         <!-- END DATA TABLE -->
     </div>
 </div>
-
